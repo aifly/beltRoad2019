@@ -1,0 +1,156 @@
+﻿@import "../css/base.scss";
+
+.zmiti-loading1 {
+    z-index: 12100;
+    background: #000;
+
+    &.loading-enter-active,
+    &.loading-leave-active {
+        @include transition(.3s 0.1s);
+    }
+
+    &.loading-leave-to,
+    &.loading-enter {
+        opacity: 0;
+    }
+}
+
+
+.zmiti-loading-icon {
+    @include transform3d;
+
+    div {
+        @include pos(a);
+
+        width: 100px;
+        height: 100px;
+        left: 50%;
+        top: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+
+        /*  */
+        img {
+            //@include animation(rotateY1 8s linear infinite);
+        }
+    }
+
+    @include animation(rotateY 2s linear infinite);
+}
+
+@-webkit-keyframes rotateY {
+    to {
+        -webkit-transform: rotateY(360deg);
+    }
+}
+
+@-webkit-keyframes rotateY1 {
+    to {
+        -webkit-transform: rotateY(-360deg);
+    }
+}
+
+.zmiti-loading-ui {
+    width: 600px;
+    height: 200px;
+    
+
+    background:rgba(23,54,134,.4);
+    @include br(20px);
+    padding: 0 50px;
+
+    
+
+    @include pos(a);
+
+    left: 50%;
+    top: 40%;
+    margin: 0px 0 0 -350px;
+
+    .zmiti-loading-title{
+        color:#fff;
+        margin: 40px 0;
+        text-align: center;
+        font-size:30px;
+        font-family:blender,Helvetica,Arial,sans-serif;
+    }
+  
+
+    .zmiti-progress {
+        color: #ffff00;
+        text-align: center;
+        margin: 20px 0;
+        padding: 20px;
+        font-family: Georgia;
+        font-size: 40px;
+        @include transform(translateX(0px));
+        @include pos(a);
+        top: 204px;
+        background:rgba(23, 54, 134, 1);
+        @include br(20px);
+        left:50%;
+        opacity:.6;
+        margin-left: -110px;
+        &:before{
+            content:'';
+            @include pos(a);
+            width: 30px;
+            height: 30px;
+            background:rgba(23, 54, 134, 1);
+            top: -15px;
+            left: 40%;
+            @include transform(rotate(-45deg));
+            
+            
+             /*透明 透明  灰*/
+        }
+        
+        span{
+            @include pos(r);
+            
+        }
+        img{
+            width: 60px;
+        }
+    }
+}
+
+.zmiti-loading-C{
+    
+    background:#21468d;
+    @include br(30px);
+    padding: 2px;
+    box-sizing: border-box;
+
+    .zmiti-loading-plane {
+        @include pos(a);
+        width: 50px;
+        top: 108px;;
+        z-index: 1111;;
+    }
+}
+.zmiti-loading-bar {
+    /*  background-image:repeating-linear-gradient(-45deg, #14c3a2, #14c3a2 30px, #22e8c3 30px, #22e8c3 60px);
+     background-size:600px 100%;
+     @include animation(barberpole 12s linear infinite); */
+    height: 20px;
+    width: 100%;
+    @include br(30px);
+
+    @include transformOrigin(left);
+
+    background: #d1b17a;
+    background:-webkit-linear-gradient(top, #ffffdb, #ffff00);
+    position: relative;
+
+}
+
+.zmiti-loading-bar.active:after,
+.zmiti-loading-bar.active:before {
+    opacity: 1;
+}
+
+.zmiti-loading-pig {
+    padding-bottom: 10px;
+    img {}
+}

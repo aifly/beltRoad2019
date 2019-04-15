@@ -1,0 +1,233 @@
+.lt-full {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.zmiti-text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+}
+
+.zmiti-play {
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1223000 !important;
+  right: .5rem;
+  top: .5rem;
+}
+
+.zmiti-play.rotate {
+  -webkit-animation: rotate 5s linear infinite;
+  animation: rotate 5s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.zmiti-choose-main-ui {
+  overflow: hidden;
+  width: 750px;
+  left: 50% !important;
+  margin-left: -375px;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-orient: vertical;
+  opacity: 0;
+  z-index: -1;
+}
+
+.zmiti-choose-main-ui.show {
+  opacity: 1;
+  z-index: 1010;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top,
+.zmiti-choose-main-ui .zmiti-choose-bottom {
+  -webkit-box-flex: 1;
+  height: 41vh;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top {
+  position: relative;
+  height: 55vh;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top .zmiti-choose-country {
+  margin-top: 100px;
+  width: 600px;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top .zmiti-choose-country-list {
+  width: 600px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top .zmiti-choose-country-list ul {
+  margin: 10px 0;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-orient: horizontal;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top .zmiti-choose-country-list ul li {
+  width: 120px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top .zmiti-choose-country-list ul li.active {
+  color: #f3ee04;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top .zmiti-choose-country-list ul li.active div:nth-of-type(1):before {
+  content: '';
+  border: 3px solid #f3ee04;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  margin-left: -50px;
+  top: -10px;
+  border-radius: 50%;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top .zmiti-choose-country-list ul li div {
+  margin: 10px 0;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top .zmiti-choose-country-list ul li div:nth-of-type(1) {
+  position: relative;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top .zmiti-choose-country-list ul li img {
+  width: 80px;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-top .zmiti-go {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -236px;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom {
+  position: relative;
+  width: 100%;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-plane1 {
+  position: absolute;
+  -webkit-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+  z-index: 2;
+  width: 550px;
+  left: 10px;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-ticket {
+  position: absolute;
+  bottom: -5px;
+  width: 550px;
+  left: 100px;
+  color: #fff;
+  z-index: 1;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-ticket h3 {
+  opacity: .8;
+  font-weight: normal;
+  font-size: 22px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-ticket > .lt-full > div {
+  width: 85%;
+  margin: 4px auto;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: justify;
+  text-align: center;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-ticket > .lt-full > div.zmiti-ticket-info {
+  font-size: 44px;
+  margin: 20px auto;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-ticket > .lt-full > div.zmiti-ticket-place {
+  opacity: .8;
+  font-size: 22px;
+  margin: 20px auto;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-ticket > .lt-full > div.zmiti-ticket-last {
+  display: block;
+  font-size: 22px;
+  opacity: .8;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-broadcast {
+  position: absolute;
+  width: 420px;
+  height: 80px;
+  z-index: 12;
+  bottom: 260px;
+  right: 40px;
+  background: -webkit-linear-gradient(left, #0191dd, #1d3290);
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-broadcast:before, .zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-broadcast:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 0 0 0 100%;
+  background: #0191dd;
+  left: -79px;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-broadcast:after {
+  right: -78px;
+  background: #1d3290;
+  left: auto;
+  border-radius: 0 100% 0 0;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-broadcast .zmiti-xiaomeng {
+  position: absolute;
+  width: 80px;
+  right: 0px;
+}
+
+.zmiti-choose-main-ui .zmiti-choose-bottom .zmiti-broadcast .zmiti-broadcast-content {
+  color: #fff;
+  line-height: 80px;
+  position: absolute;
+  font-size: 34px;
+  left: -20px;
+}

@@ -1,0 +1,187 @@
+﻿@import "../css/base.scss";
+
+.zmiti-index {
+    z-index: 1200;
+    background: #000;
+    overflow: hidden;
+
+    &.index-enter-active,
+    &.index-leave-active {
+        @include transition(2s 0.1s);
+    }
+
+    &.index-leave-to,
+    &.index-enter {
+        opacity: 0;
+    }
+
+    @at-root.zmiti-index-logo {
+        @include pos(a);
+
+        width: 90px;
+        top: 40px;
+        left: 40px;
+        z-index: 10;
+    }
+
+    .zmiti-index-start {
+        @include pos(a);
+
+        width: 400px;
+        bottom: 30px;
+        left: 175px;
+        z-index: 13;
+    }
+
+    .zmiti-index-plane {
+        @include pos(a);
+
+        width: 200px;
+        bottom: 120px;
+        left: 100%;
+
+        @include transition(4s);
+
+        &.active {
+            @include transform(translate(-950px, -300px));
+        }
+    }
+
+    .zmiti-index-map {
+        @include pos(a);
+
+        z-index: 12;
+        width: 750px;
+
+        //height: 958px;
+        right: 0;
+        top: 80px;
+
+        //@include animation(mapMove 10s linear  forwards);
+   
+    }
+
+    .zmiti-index-main {
+        &.main-enter-active,
+        &.main-leave-active {
+            @include transition(1s 0.1s);
+        }
+
+        &.main-leave-to,
+        &.main-enter {
+            opacity: 0;
+            @include transform(translateX(-300px));
+        }
+
+        &.main-enter {
+            @include transform(translateX(300px));
+        }
+    }
+
+    .zmiti-main-remark {
+        @include pos(a);
+
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 14;
+
+        &.remark-enter-active,
+        &.remark-leave-active {
+            @include transition(1s 0.4s);
+        }
+
+        &.remark-leave-to,
+        &.remark-enter {
+            opacity: 0;
+
+            @include transform(translateX(-300px));
+        }
+
+        &.remark-enter {
+            @include transform(translateX(300px));
+        }
+
+        @include displayBox(horizontal);
+
+        img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-height: 88%;
+            max-width: 88%;
+        }
+    }
+
+    .zmiti-index-title {
+        @include pos(a);
+
+        width: 450px;
+        top: 26vh;
+        left: 4vw;
+
+        //  @include animation(mapMove 10s linear  forwards);
+   
+    }
+
+    @-webkit-keyframes mapMove {
+        to {
+            @include transform(translateX(820px));
+        }
+    }
+
+    .zmiti-index-earth {
+        @include pos(a);
+
+        z-index: 10;
+        left: 10%;
+        top: 78%;
+        width: 1000px;
+
+        &.active {
+            @include animation(earth 2s linear forwards);
+        }
+
+        @-webkit-keyframes earth {
+            to {
+                @include transform(rotate(-46deg));
+            }
+        }
+    }
+
+    .zmiti-cloud {
+        @include pos(a);
+
+        width: 1819px;
+        height: 958px;
+
+        // @include animation(move1  3s linear infinite);
+        top: 50%;
+
+        @include transform(translateX(-239px));
+
+        margin-top: -479px;
+    }
+
+    @-webkit-keyframes move1 {
+        to {
+            @include transform(translateX(-439px));
+        }
+    }
+}
+
+@media all and (max-height: 1109px) {
+    .zmiti-index {
+        .zmiti-index-start {
+            bottom: 20px;
+        }
+
+        .zmiti-main-remark {
+            img {
+                max-height: 80%;
+                max-width: 80%;
+            }
+        }
+    }
+}
