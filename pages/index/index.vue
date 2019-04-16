@@ -4,18 +4,23 @@
 			<div class='zmiti-index-logo'>
 				<img :src="imgs.logo" alt="">
 			</div>
-			<div class='zmiti-cloud'>
+
+
+			<div class='zmiti-cloud' :class="{'active':!showMain}">
 				<img :src="imgs.cloud" alt="">
 			</div>
+		
 
 			<transition name='main'>
 				<div class='zmiti-index-main' v-if='showMain'>
-					<div class='zmiti-index-start'>
+					<div class='zmiti-index-start' v-press v-tap='[entryMain]'>
 						<img :src="imgs.startBtn" alt="">
 					</div>
-
-					<div class='zmiti-index-map'>
+					<div class='zmiti-index-map zmiti-index-map2'>
 						<img :src="imgs.map" alt="">
+					</div>
+					<div class='zmiti-index-map1 zmiti-index-map'>
+						<img :src="imgs.map1" alt="">
 					</div>
 					<div class='zmiti-index-title'>
 						<img :src="imgs.title" alt="">
@@ -31,10 +36,10 @@
 
 
 
-			<div class='zmiti-index-earth'>
+			<div class='zmiti-index-earth' :class="{'active':!showMain}">
 				<img :src="imgs.earth" alt="">
 			</div>
-			<div class='zmiti-index-plane'>
+			<div class='zmiti-index-plane' :class="{'active':!showMain}">
 				<img :src="imgs.plane" alt="">
 			</div>
 		</section>
@@ -62,17 +67,14 @@
 		
 		methods:{
 			entryMain(){
-				this.show = false;
-				this.obserable.trigger({
-					type:'showMain'
-				});
+				this.showMain = false;
 			}
 		},
 		mounted(){
 			var {obserable} = this;
 
 			setTimeout(() => {
-				 this.showMain = false;
+				// 
 			}, 100);
 		}
 	}

@@ -55,15 +55,14 @@ new Vue({
 		<Upload :pv='pv' :nickname='nickname' :headimgurl='headimgurl'   v-if='show && !isShare'  :obserable='obserable'></Upload>
 		<Loading v-if='!show' :width='width' :obserable='obserable'></Loading>
 		
-		<Main v-if='show' :obserable='obserable'></Main>
 		<Music :obserable='obserable'></Music>
 		*/
 		template: `<div id='app1'>
 		<Loading :width='width' :obserable='obserable'></Loading>
-		<Index v-if='show && false' :obserable='obserable'></Index>
-		<Choose v-if='show && false' :obserable='obserable'></Choose>
-		<Share v-if='show' :obserable='obserable'></Share>
-	</div>`,
+		<Index v-if='show   && false' :obserable='obserable'></Index>
+		<Choose v-if='show  && false' :obserable='obserable'></Choose>
+		<Share v-if='show ' :obserable='obserable'></Share>
+		</div>`,
 	methods: {	
 
 		loading: function(arr, fn, fnEnd) {

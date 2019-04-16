@@ -40,6 +40,13 @@
   z-index: 1119;
 }
 
+.zmiti-share-main-ui .zmiti-share-point {
+  position: absolute;
+  left: 0;
+  bottom: 140px;
+  width: 100%;
+}
+
 .zmiti-share-main-ui .zmiti-point-C {
   position: absolute;
   color: #fff;

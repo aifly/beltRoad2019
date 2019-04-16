@@ -71,6 +71,21 @@ vueTouch.prototype = {
         this.vueMoves = false;
     }
 };
+Vue.directive('press', {
+    bind: function (el, binding) {
+        el.addEventListener('touchstart',(e)=>{
+            //el.classList.add(binding.value);
+            ///console.log(binding);
+            el.style.WebkitTransform = 'scale(.98) translateY(4px)';
+            el.style.transform = 'scale(.98) translateY(4px)';
+        });
+        el.addEventListener('touchend',e=>{
+            //el.classList.remove(binding.value);
+            el.style.WebkitTransform = 'scale(1) translateY(0)';
+            el.style.transform = 'scale(1) translateY(0)';
+        });
+    }
+});
 
 Vue.directive("swipe", {
     bind: function(el, binding) {

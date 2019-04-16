@@ -26,6 +26,8 @@
 	
 	
 	cloud: "./assets/images/cloud.png",
+	no: "./assets/images/no.png",
+	see: "./assets/images/see.png",
 	goback: "./assets/images/goback.png",
 	next: "./assets/images/next.png",
 	restart: "./assets/images/restart.png",
@@ -40,21 +42,18 @@
 	choose: "./assets/images/choose.png",
 	qrcode: "./assets/images/qrcode.png",
 	map: "./assets/images/map.png",
+	map1: "./assets/images/map1.png",
 	loadingPlane: "./assets/images/loading-plane.png",
 	startBtn: "./assets/images/start-btn.png",
 	indexBg: "./assets/images/index-bg.jpg",
 	chooseBg: "./assets/images/choose-bg.jpg",
 	shareBg: "./assets/images/share-bg.jpg",
 	loadingBg: "./assets/images/loading-bg.jpg",
-	
+	countryTop:'./assets/images/country-top.png',
+	sharePoint: './assets/images/share-point.png'
 };
-
-
- 
  
 var arr = [];
- 
- 
 for (var attr in imgs) {
 	arr.push(imgs[attr]);
 }
@@ -67,7 +66,12 @@ for (var attr in imgs) {
    	baseUrl: "https://testxlive.xinhuaapp.com",
    	host:"https://xlive.xinhuaapp.com", //正式域名：https://testxlive.xinhuaapp.com
    	secretKey: "e9469538b0623783f38c585821459454",
-	   
+	countryPosition:[
+		{
+			x:370,
+			y:500
+		}
+	],
 	countryList: [{
 		name: '蒙古',
 		img: imgs.menggu,
@@ -77,40 +81,40 @@ for (var attr in imgs) {
 		name: '哈萨克斯坦',
 		img: imgs.hasakesitan,
 		cityImgs: [imgs.hasakesitan_1],
-		position:[350,740]
+		//position:[350,740]
 	}, {
 		name: '俄罗斯',
 		img: imgs.eluosi,
 		cityImgs:[],
-		position:[190,770],
+		//position:[190,770],
 		inline: true
 	}, {
 		name: '白俄罗斯',
 		img: imgs.baieluosi,
 		cityImgs:[],
-		position: [120, 750],
+		//position: [120, 750],
 		inline:true
 		
 	}, {
 		name: '立陶宛',
 		img: imgs.litaowan,
 		cityImgs: [],
-		position: [60, 790]
+		//position: [60, 790]
 	}, {
 		name: '波兰',
 		img: imgs.bolan,
 		cityImgs: [],
-		position: [70, 700]
+		//position: [70, 700]
 	}, {
 		name: '意大利',
 		img: imgs.yidali,
 		cityImgs: [],
-		position: [0, 630],
+		//position: [0, 630],
 	}, {
 		name: '希腊',
 		img: imgs.xila,
 		cityImgs: [],
-		position: [100, 610],
+		//position: [100, 610],
 	}, {
 		name: '越南',
 		img: imgs.yuenan,
@@ -138,7 +142,7 @@ for (var attr in imgs) {
 	}, {
 		name: '土耳其',
 		img: imgs.tuerqi,
-		position: [0, 630],
+		//position: [0, 630],
 		cityImgs:[]
 	}, {
 		name: '斯里兰卡',

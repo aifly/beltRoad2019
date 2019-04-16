@@ -3,69 +3,100 @@
 		<div class="zmiti-index-logo">
 			<img :src="imgs.logo" alt="">
 		</div>
-		<div class='zmiti-choose-top'>
-			<div class="zmiti-choose-country">
-				<img :src="imgs.choose" alt="">
-			</div>
-			<div class='zmiti-choose-country-list' ref='country'>
-				<div :style="{width:countrys1.length*130+'px'}">
-					<ul :style="{width:countrys1.length*130+'px'}">
-						<li  :class="{'active':currentCountry === i}" v-tap='[chooseCountry,i]' v-for='(item,i) in countrys1' :key="i">
-							<div>
-								<img :src="item.img" alt="">
-							</div>
-							<div>{{item.name}}</div>
 
-						</li>
-					</ul>
-					<ul :style="{width:countrys2.length*130+'px'}">
-						<li v-tap='[chooseCountry,i+countrys2.length]' v-for='(item,i) in countrys2' :key="i"  :class="{'active':currentCountry === i+countrys2.length}">
-							<div>
-								<img :src="item.img" alt="">
-							</div>
-							<div>{{item.name}}</div>
+		<transition name='choose'>
+			<div class='lt-full' v-show='showCountry'>
+				<div class='zmiti-choose-top'>
+					<div class="zmiti-choose-country" >
+						<img :src="imgs.choose" alt="">
+					</div>
+					<div class='zmiti-choose-country-list' ref='country'>
+						<div :style="{width:countrys1.length*130+'px'}">
+							<ul :style="{width:countrys1.length*130+'px'}">
+								<li  :class="{'active':currentCountry === i}" v-tap='[chooseCountry,i]' v-for='(item,i) in countrys1' :key="i">
+									<div>
+										<img :src="item.img" alt="">
+									</div>
+									<div>{{item.name}}</div>
 
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="zmiti-go">
-				<img :src="imgs.go" alt="">
-			</div>
-		</div>
-		<div class='zmiti-choose-bottom'>
-			<div class='zmiti-plane1'>
-				<img :src="imgs.plane1" alt="">
-			</div>
+								</li>
+							</ul>
+							<ul :style="{width:countrys2.length*130+'px'}">
+								<li v-tap='[chooseCountry,i+countrys2.length]' v-for='(item,i) in countrys2' :key="i"  :class="{'active':currentCountry === i+countrys2.length}">
+									<div>
+										<img :src="item.img" alt="">
+									</div>
+									<div>{{item.name}}</div>
 
-			<div class="zmiti-ticket">
-				<canvas width='550' ref='canvas' height="240"></canvas>
-				<div class='lt-full'>
-					<h3>欢迎您搭乘本次“一带一路”号专机</h3>
-					<div class='zmiti-ticket-info'>
-						<div>北京</div>
-						<div>
-							<img :src="imgs.to" alt="">
+								</li>
+							</ul>
 						</div>
-						<div>{{currentCountryObj.name}}</div>
 					</div>
-					<div class='zmiti-ticket-place'>
-						<div>出发地</div>
-						<div>目的地</div>
+					<div class="zmiti-go" v-press v-if='!showCountryDetail' v-tap='[goCountry]'>
+						<img :src="imgs.go" alt="">
 					</div>
-					<div class='zmiti-ticket-last'>“一带一路”专用机票</div>
+					<div class='zmiti-go-next' v-show="showCountryDetail">
+						<div v-press v-tap='[goCountry]'>
+							<img  :src="imgs.see" alt="">
+						</div>
+						<div v-press>
+							<img :src="imgs.no" alt="">
+						</div>
+					</div>
+				</div>
+				<div class='zmiti-choose-bottom'>
+					<div class='zmiti-plane1' v-if='!showCountryDetail'>
+						<img :src="imgs.plane1" alt="">
+					</div>
+
+					<div class="zmiti-ticket" v-show='showCountry'>
+						<canvas width='550' ref='canvas' height="240"></canvas>
+						<div class='lt-full'>
+							<h3>欢迎您搭乘本次“一带一路”号专机</h3>
+							<div class='zmiti-ticket-info'>
+								<div>北京</div>
+								<div>
+									<img :src="imgs.to" alt="">
+								</div>
+								<div>{{currentCountryObj.name}}</div>
+							</div>
+							<div class='zmiti-ticket-place'>
+								<div>出发地</div>
+								<div>目的地</div>
+							</div>
+							<div class='zmiti-ticket-last'>“一带一路”专用机票</div>
+						</div>
+					</div>
 				</div>
 			</div>
+		</transition>
 
-
-			<div class='zmiti-broadcast'>
-				<div class='zmiti-xiaomeng'>
-					<img :src="imgs.xiaomeng" alt="">
+		<transition name='detail'>
+			<div class='zmiti-country-detail' v-if='showCountryDetail'>
+				<div class='lt-full' v-for='(bg,i) in currentCountryObj.cityImgs' :key="i" :style="{background:'url('+bg+') no-repeat center bottom',backgroundSize:'cover'}"></div>
+				<div class='zmiti-country-name' v-if='!showCountry'>
+					<img :src="imgs.countryTop" alt="">
+					<div>{{currentCountryObj.name}}</div>
 				</div>
 
-				<div class='zmiti-broadcast-content'>
-					尊敬的旅客您好！
+				<div class='zmiti-country-detail-btns' v-show='!showCountry'>
+					<div v-press v-tap='[goNextCountry]'>
+						<img :src="imgs.next" alt="">
+					</div>
+					<div v-press>
+						<img :src="imgs.goback" alt="">
+					</div>
 				</div>
+			</div>
+		</transition>
+
+		<div class='zmiti-broadcast'>
+			<div class='zmiti-xiaomeng'>
+				<img :src="imgs.xiaomeng" alt="">
+			</div>
+
+			<div class='zmiti-broadcast-content'>
+				尊敬的旅客您好！
 			</div>
 		</div>
 	</div>
@@ -76,6 +107,7 @@
 	import zmitiUtil from '../lib/util'; 
 	import IScroll from 'iscroll';
 	const len = window.config.countryList.length;
+
 	export default {
 		props:['obserable','pv'],
 		name:'zmitiindex',
@@ -89,7 +121,9 @@
 				viewW:document.documentElement.clientWidth,
 				showBtns:false,
 				viewH:document.documentElement.clientHeight,
-				currentCountryObj:{}
+				currentCountryObj:{},
+				showCountry:true,
+				showCountryDetail:false
 
 			}
 		},
@@ -100,8 +134,21 @@
 
 			chooseCountry(index){
 				this.currentCountry = index;
-				this.currentCountryObj = window.config.countryList[index]
 				
+				
+			},
+			goCountry(){
+				if(this.currentCountry <= -1){
+					return;
+				}
+				this.showCountryDetail = true;
+				this.showCountry = false;
+				this.currentCountryObj = window.config.countryList[this.currentCountry]
+
+			},
+
+			goNextCountry(){
+				this.showCountry = true;
 			},
 		
 			imgStart(e){

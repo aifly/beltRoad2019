@@ -62,7 +62,7 @@
 .zmiti-index .zmiti-index-start {
   position: absolute;
   width: 400px;
-  bottom: 30px;
+  bottom: 130px;
   left: 175px;
   z-index: 13;
 }
@@ -84,14 +84,31 @@
 .zmiti-index .zmiti-index-map {
   position: absolute;
   z-index: 12;
-  width: 750px;
-  right: 0;
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
   top: 80px;
 }
 
+.zmiti-index .zmiti-index-map1 {
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+  -webkit-animation: mapMove 26s linear infinite;
+  animation: mapMove 26s linear infinite;
+}
+
+.zmiti-index .zmiti-index-map2 {
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+  -webkit-animation: mapMove1 26s linear infinite;
+  animation: mapMove1 26s linear infinite;
+}
+
 .zmiti-index .zmiti-index-main.main-enter-active, .zmiti-index .zmiti-index-main.main-leave-active {
-  -webkit-transition: 1s 0.1s;
-  transition: 1s 0.1s;
+  -webkit-transition: 1s 1.5s;
+  transition: 1s 1.5s;
 }
 
 .zmiti-index .zmiti-index-main.main-leave-to, .zmiti-index .zmiti-index-main.main-enter {
@@ -119,8 +136,8 @@
 }
 
 .zmiti-index .zmiti-main-remark.remark-enter-active, .zmiti-index .zmiti-main-remark.remark-leave-active {
-  -webkit-transition: 1s 0.4s;
-  transition: 1s 0.4s;
+  -webkit-transition: 1s 1.5s;
+  transition: 1s 1.5s;
 }
 
 .zmiti-index .zmiti-main-remark.remark-leave-to, .zmiti-index .zmiti-main-remark.remark-enter {
@@ -144,15 +161,30 @@
 
 .zmiti-index .zmiti-index-title {
   position: absolute;
-  width: 450px;
-  top: 26vh;
-  left: 4vw;
+  width: 580px;
+  top: 23vh;
+  left: 10vw;
 }
 
 @-webkit-keyframes mapMove {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
   to {
-    -webkit-transform: translateX(820px);
-    transform: translateX(820px);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes mapMove1 {
+  from {
+    -webkit-transform: rotate(0) scale(0.85);
+    transform: rotate(0) scale(0.85);
+  }
+  to {
+    -webkit-transform: rotate(-360deg) scale(0.85);
+    transform: rotate(-360deg) scale(0.85);
   }
 }
 
@@ -181,9 +213,16 @@
   width: 1819px;
   height: 958px;
   top: 50%;
-  -webkit-transform: translateX(-239px);
-  transform: translateX(-239px);
+  -webkit-transform: translateX(-500px);
+  transform: translateX(-500px);
+  -webkit-transition: 4s;
+  transition: 4s;
   margin-top: -479px;
+}
+
+.zmiti-index .zmiti-cloud.active {
+  -webkit-transform: translateX(-240px);
+  transform: translateX(-240px);
 }
 
 @-webkit-keyframes move1 {
@@ -195,7 +234,7 @@
 
 @media all and (max-height: 1109px) {
   .zmiti-index .zmiti-index-start {
-    bottom: 20px;
+    bottom: 130px;
   }
   .zmiti-index .zmiti-main-remark img {
     max-height: 80%;

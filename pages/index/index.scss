@@ -28,7 +28,7 @@
         @include pos(a);
 
         width: 400px;
-        bottom: 30px;
+        bottom: 130px;
         left: 175px;
         z-index: 13;
     }
@@ -47,24 +47,43 @@
         }
     }
 
+
+    $mapSize:600px;
+
     .zmiti-index-map {
         @include pos(a);
 
         z-index: 12;
-        width: 750px;
+        width: $mapSize;
 
         //height: 958px;
-        right: 0;
+        left: 50%;
+        margin-left:-$mapSize/2;
         top: 80px;
+        //@include transform(scale(.85));
 
-        //@include animation(mapMove 10s linear  forwards);
+        
    
     }
+    .zmiti-index-map1{
+        width: $mapSize;
+        left: 50%;
+        margin-left:-($mapSize)/2;
+        //@include transform(scale(1));
+        @include animation(mapMove 26s linear infinite);
+    }
+     .zmiti-index-map2 {
+         width: $mapSize;
+         left: 50%;
+         margin-left: -($mapSize)/2;
+         //@include transform(scale(1));
+         @include animation(mapMove1 26s linear infinite);
+     }
 
     .zmiti-index-main {
         &.main-enter-active,
         &.main-leave-active {
-            @include transition(1s 0.1s);
+            @include transition(1s 1.5s);
         }
 
         &.main-leave-to,
@@ -89,7 +108,7 @@
 
         &.remark-enter-active,
         &.remark-leave-active {
-            @include transition(1s 0.4s);
+            @include transition(1s 1.5s);
         }
 
         &.remark-leave-to,
@@ -117,19 +136,32 @@
     .zmiti-index-title {
         @include pos(a);
 
-        width: 450px;
-        top: 26vh;
-        left: 4vw;
+        width: 580px;
+        top: 23vh;
+        left: 10vw;
 
         //  @include animation(mapMove 10s linear  forwards);
    
     }
 
     @-webkit-keyframes mapMove {
+        from {
+            @include transform(rotate(0) );
+        }
         to {
-            @include transform(translateX(820px));
+            @include transform(rotate(360deg) );
         }
     }
+
+      @-webkit-keyframes mapMove1 {
+          from {
+              @include transform(rotate(0) scale(.85));
+          }
+
+          to {
+              @include transform(rotate(-360deg) scale(.85));
+          }
+      }
 
     .zmiti-index-earth {
         @include pos(a);
@@ -159,7 +191,13 @@
         // @include animation(move1  3s linear infinite);
         top: 50%;
 
-        @include transform(translateX(-239px));
+        @include transform(translateX(-500px));
+        @include transition(4s);
+        
+        &.active{
+            
+            @include transform(translateX(-240px));
+        }
 
         margin-top: -479px;
     }
@@ -174,7 +212,7 @@
 @media all and (max-height: 1109px) {
     .zmiti-index {
         .zmiti-index-start {
-            bottom: 20px;
+            bottom: 130px;
         }
 
         .zmiti-main-remark {

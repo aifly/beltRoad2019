@@ -2,10 +2,17 @@
 
 .zmiti-share-main-ui {
     z-index: 1119;
+    .zmiti-share-point {
+        @include pos(a);
+        left: 0;
+        bottom: 140px;
+        width: 100%;
+    }
     .zmiti-point-C{
         @include pos(a);
         color:#fff;
         font-size:24px;
+        
         .zmiti-point{
             @include pos(r);
             margin: 0 auto;
