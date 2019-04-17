@@ -1,16 +1,37 @@
 <template>
 	<transition name='loading'>
-		<section v-if='show'  class="lt-full zmiti-share-main-ui" :style="{background:'url('+imgs.shareBg+') no-repeat left bottom ',backgroundSize:'cover'}" >
-			
+		<section v-if='show'  class="lt-full zmiti-share-main-ui" :class='{"active":createImg}'>
+			<div  class='lt-full' ref='page1' :style="{WebkitFilter:'blur('+(createImg?'10px':0)+')',background:'url('+imgs.shareBg+') no-repeat left bottom ',backgroundSize:'cover'}" >
+				<div class="zmiti-index-logo">
+					<img :src="imgs.logo" alt="">
+				</div>
+				
+				<div class='zmiti-share-point'>
+					<img :src="imgs.sharePoint" alt="">
+				</div>
+				<div  class='zmiti-point-C' v-for="(point,i) in countryPosition" :key="i"  :style="{left:point.x+'px',bottom:point.y+'px'}">
+					<div >{{countryList[i]?countryList[i].name:''}}</div>
+				</div>
+			</div>
+
+			<transition name='create'>
+				<div class='zmiti-createimg lt-full' v-if="createImg">
+					<img :src="createImg" alt="" />
+					<span>长按保存图片</span>
+				</div>
+			</transition>
+
+			<transition name='create'>
+				<div class='zmiti-share-btns' v-if="createImg">
+					<div v-press v-tap='[showMaskPage]'><img :src="imgs.invite" alt=""></div>
+					<div v-press v-tap='[restart]'><img :src="imgs.restart" alt=""></div>
+				</div>
+			</transition>
+
 			<div class='zmiti-mask' v-if='showMask' @touchstart='showMask = false'>
 				<img :src="imgs.arrow" alt="">
 			</div>
-			<div class='zmiti-share-point'>
-				<img :src="imgs.sharePoint" alt="">
-			</div>
-			<div  class='zmiti-point-C' v-for="(point,i) in countryPosition" :key="i"  :style="{left:point.x+'px',bottom:point.y+'px'}">
-				<div  :style="{color:countryList.length/2>i?'#fff':'yellow'}">{{countryList[i].name}}</div>
-			</div>
+
 		</section>
 	</transition>
 </template>
@@ -19,72 +40,9 @@
 	import './index.css';
 	import zmitiUtil from '../lib/util';
 	import Point from '../lib/point';
-	//import '../lib/html2canvas';
+	import '../lib/html2canvas';
 	var countryPosition = [
-		{
-			x:430,
-			y:540
-		},
-		{
-			x:234,
-			y:530
-		},
-		{
-			x:144,
-			y:908
-		},
-		{
-			x:454,
-			y:860
-		}, 
-		{
-			x:190,
-			y:754
-		},
-		{
-			x:340,
-			y:740
-		},
-		{
-			x:500,
-			y:745
-		},
-		{
-			x:150,
-			y:640
-		},
-		{
-			x:250,
-			y:630
-		},
-		{
-			x:540,
-			y:620
-		},
-		{
-			x:325,
-			y:454
-		},
-		{
-			x:260,
-			y:350
-		},
-		{
-			x:170,
-			y:244
-		},
-		{
-			x:280,
-			y:200
-		},
-		{
-			x:470,
-			y:260
-		},
-		{
-			x:550,
-			y:380
-		}
+		
 	];
 	export default {
 		props:['width','obserable'],
@@ -95,15 +53,16 @@
 				className:"",
 				showAudio:false,
 				showMask:false,
-				countryList:window.config.countryList,
+				countryList:[],
 				isAndroid:navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1,
 				showQrcode:false,
-				countryPosition,//:window.config.countryPosition,
+				countryPosition:window.config.countryPosition,
 				showSharePage:false,
 				matchMoved:false,
 				viewW:Math.min(window.innerWidth,750),
 				viewH:window.innerHeight,
-				show:true,
+				show:false,
+				createImg:''
 			}
 		},
 		components:{
@@ -120,31 +79,14 @@
 
 
 			restart(){
-				this.matchStyle={
-					left:'200px',
-					top:window.innerHeight*.6+'px',
-					zIndex:201
-					
-				};
-				this.light = true;
+				
 				this.showSharePage = false;
 				this.createImg = '';
-				this.showMatch = true;
-				this.isPlaying = false;
-				this.hideShadow = false;
-				this.matchMoved = false;
-				this.showCandle1 = false;
-				this.showMask = false;
-				this.showFlame = false;
-				this.showCandle = false;
-				this.showAudio = false;
-				this.showQrcode = false;
-				setTimeout(()=>{
-					this.light = false;
-				},100)
-				this.randomIndex = Math.random()*3|0;
-				this.updatePv();
+				this.show = false;
 
+				this.obserable.trigger({
+					type:'clearCountry'
+				})
 
 			},
 
@@ -229,41 +171,39 @@
 					type:'playVoice',
 					data:'photo'
 				});
-
-				this.creatCanvas();
-
-				return;
-
-				/*  */
- 
 				setTimeout(()=>{
 					//this.showLoading = true;
-					var dom = this.$refs[ref];
 					
-					/* html2canvas(dom,{
+					var dom = this.$refs[ref];
+					html2canvas(dom,{
 						useCORS: true,
 						onrendered: function(canvas) {
 					        var src = canvas.toDataURL();
 							//s.mergeImg = '';
 							//s.createImg = src;
-							
-							if(!s.isAndroid){
-								obserable.trigger({
-									type:'playVoice',
-									data:'photo'
-								});
-							}
-							
 							s.createImg = src;
+							
 					      },
 					      width: dom.clientWidth,
 					      height:dom.clientHeight
-					}) */
-				},100);
+					})
+				},100)
+
+ 
 			},
 			
 		},
 		mounted(){
+			this.obserable.on('showSharePage',(data)=>{
+				this.show = true;
+				setTimeout(() => {
+					this.countryList = data;
+				}, 1);
+				setTimeout(() => {
+					this.html2img();
+				}, 1000);
+			})
+			
 		}
 	}
 </script>

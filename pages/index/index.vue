@@ -29,7 +29,7 @@
 			</transition>
 
 			<transition name='remark'>
-				<div class="zmiti-main-remark" v-if='!showMain'>
+				<div class="zmiti-main-remark" v-if='!showMain' v-tap='[entryChoose]'>
 					<img :src="imgs.remark" alt="">
 				</div>
 			</transition>
@@ -68,7 +68,22 @@
 		methods:{
 			entryMain(){
 				this.showMain = false;
+				this.obserable.trigger({
+					type:'playVoice',
+					data:'plane'
+				});
+
+				setTimeout(() => {
+					this.entryChoose();
+				}, 6000);
+			},
+			entryChoose(){
+				this.show = false;
+				this.obserable.trigger({
+					type:"showChoosePage"
+				})
 			}
+			
 		},
 		mounted(){
 			var {obserable} = this;

@@ -63,7 +63,7 @@
 		mounted(){
 			
 			this.obserable.on('hideloading1',()=>{
-				
+				//return;
 				setTimeout(() => {
 					this.loaded = true;
 					this.showLoading = false;

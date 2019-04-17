@@ -76,6 +76,7 @@ img {
   background: rgba(0, 0, 0, 0.8);
   z-index: 1300;
   text-align: right;
+  z-index: 999;
 }
 
 .zmiti-mask img {
