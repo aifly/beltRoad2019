@@ -32,40 +32,45 @@
 							</ul>
 						</div>
 					</div>
-					<div class="zmiti-go" v-press v-if='!showCountryDetail' v-tap='[goCountry]'>
-						<img :src="imgs.go" alt="">
+					
+				</div>
+				<div class='zmiti-go-next' v-show="showCountryDetail">
+					<div v-press v-tap='[goCountry]'>
+						<img  :src="imgs.see" alt="">
 					</div>
-					<div class='zmiti-go-next' v-show="showCountryDetail">
-						<div v-press v-tap='[goCountry]'>
-							<img  :src="imgs.see" alt="">
-						</div>
-						<div v-press v-tap='[toShare]'>
-							<img :src="imgs.no" alt="">
-						</div>
+					<div v-press v-tap='[toShare]'>
+						<img :src="imgs.no" alt="">
 					</div>
 				</div>
+				<div class="zmiti-go" v-press v-if='!showCountryDetail && currentCountry>-1' v-tap='[goCountry]'>
+						<img :src="imgs.go" alt="">
+					</div>
 				<div class='zmiti-choose-bottom'>
 					<div class='zmiti-plane1' v-if='!showCountryDetail' :class='{"active":showPlane1}'>
 						<img :src="imgs.plane1" alt="">
 					</div>
 
-					<div class="zmiti-ticket" :style="{opacity:showCountry?1:0}">
-						<canvas width='600' :style="{background:canvasBg?'url('+canvasBg+') no-repeat center center':'none'}" ref='canvas' height="240"></canvas>
-						<div class='lt-full'>
-							<h3>欢迎您搭乘本次“一带一路”号专机</h3>
-							<div class='zmiti-ticket-info'>
-								<div>北京</div>
-								<div>
-									<img :src="imgs.to" alt="">
-								</div>
-								<div>{{countrys[currentCountry]?countrys[currentCountry].name:''}}</div>
+				
+				</div>
+
+				<div class="zmiti-ticket" :class='{"active":transY>0}' :style="{opacity:showCountry?1:0,WebkitTransform:'translateY('+-transY+'px)'}">
+					<div>
+						<img :src="canvasBg" alt="">
+					</div>
+					<div class='lt-full'>
+						<h3>欢迎您搭乘本次“一带一路”号专机</h3>
+						<div class='zmiti-ticket-info'>
+							<div>北京</div>
+							<div>
+								<img :src="imgs.to" alt="">
 							</div>
-							<div class='zmiti-ticket-place'>
-								<div>出发地</div>
-								<div>目的地</div>
-							</div>
-							<div class='zmiti-ticket-last'>“一带一路”专用机票</div>
+							<div>{{countrys[currentCountry]?countrys[currentCountry].name:''}}</div>
 						</div>
+						<div class='zmiti-ticket-place'>
+							<div>出发地</div>
+							<div>目的地</div>
+						</div>
+						<div class='zmiti-ticket-last'>“一带一路”专用机票</div>
 					</div>
 				</div>
 			</div>
@@ -100,12 +105,12 @@
 			</div>
 
 			<div class='zmiti-broadcast-content'>
-				<span :style="{WebkitAnimationDuration:(currentCountryObj.daoyu||daoyu).length/20+'s'}">{{currentCountryObj.daoyu||daoyu}}</span>
+				<span :class="{'active':wordsAnimation}" :style="{WebkitTransform:'translateX('+-transX+'px)',WebkitAnimationDuration:wordsWidth/34/6+'s',width:wordsWidth+'px'}">{{currentCountryObj.daoyu||daoyu}}</span>
 			</div>
 		</div>
 
 		<div class=' zmiti-project' v-if='!showCountry && currentCountryObj.project' v-tap='[playVideoByFirst]'>
-			<span>中哈合作项目</span> 去看看>>
+			<span>{{currentCountryObj.project.name}}</span> 去看看>>
 		</div>
 
 
@@ -113,10 +118,10 @@
 			<video x-webkit-airplay="allow"  webkit-playsinline="true" playsinline preload='auto'
 				x5-video-player-type="h5" :x5-video-player-fullscreen="true" 
 				 :poster='currentCountryObj.project.poster'
-				 
-				ref='video' :style="{display:showVideo?'block':'none',zIndex:showVideo?1000:-1,width:videoWidth,height:'100%'}"  :src="currentCountryObj.project?currentCountryObj.project.video:''"></video>
+				 loop = 'loop'
+				ref='video' :style="{display:showVideo?'block':'none',zIndex:showVideo?1000:-1,width:videoWidth,height:videoHeight}"  :src="currentCountryObj.project?currentCountryObj.project.video:''"></video>
 				<div class='zmiti-video-btns' v-if='showVideo'>
-					<div class='zmiti-nextstation' v-press :style="{opacity:(isPlaying === false && isPlaying !== -1) ? 1:0}">
+					<div class='zmiti-nextstation' v-tap='[nextStation]' v-press :style="{opacity:(isPlaying === false && isPlaying !== -1) ? 1:0}">
 						<img :src="imgs.nextstation" alt="" />
 					</div>
 					<div class='zmiti-longtap '  @touchstart='playVideo' @touchend='pauseVideo'  v-press >
@@ -125,10 +130,11 @@
 					<div class='zmiti-exit' v-tap='[exit]' :style="{opacity:(isPlaying === false && isPlaying !== -1) ?1:0}">
 						<img :src="imgs.exit" alt="" />
 					</div>
-
-
-
 				</div>
+		</div>
+
+		<div class="zmiti-tip lt-full" v-if='showTip' @touchstart='showTip = false'>
+			<img :src="imgs.tip" alt="">
 		</div>
 	</div>
 </template>
@@ -147,9 +153,12 @@
 				imgs:window.imgs,
 				daoyu:window.config.daoyu,
 				show:false,
-				canvasBg:"",
+				transX:-100,
+				canvasBg:imgs.ticket,
 				showVideo:false,
+				showTip:true,
 				currentCountry:-1,
+				transY:0,
 				videoWidth:window.innerWidth+'px',
 				showPlane1:false,
 				countrys:window.config.countryList.slice(0),
@@ -160,6 +169,11 @@
 				viewH:document.documentElement.clientHeight,
 				viewCountrys:[],
 				isPlaying:-1,
+				wordsWidth:0,
+
+				wordsAnimation:true,
+
+				videoHeight:window.innerHeight+'px',
 				currentCountryObj:{
 					index:0
 				},
@@ -171,20 +185,47 @@
 		components:{
 		},
 		watch:{
+			currentCountryObj:{
+				immediate:true,
+				deep:true,
+				handler:function(){
+					var width = (this.currentCountryObj.daoyu || window.config.daoyu).length * 34;
+					this.wordsWidth = width;
+				}
+				
+			},
 			showCountry(){
-				this.initTicket();
+				//this.initTicket();
+			},
+			showTip(val){
+				if(!val){
+						clearInterval(this.wordsTimer);
+						this.wordsTimer = setInterval(() => {
+							this.transX += 6;
+							///this.transX = Math.min(this.transX , this.wordsWidth - 350);
+							if(this.transX > this.wordsWidth - 350){
+								this.transX = -350;
+							}
+						}, 30);
+				}
 			}
 		},
 		
 		methods:{
 
-		    exit(){
-				setTimeout(() => {
-					this.showVideo = false;
-					this.pauseVideo();
-				}, 100);
+		    exit(fn){
+					setTimeout(() => {
+						this.showVideo = false;
+						this.pauseVideo();
+						fn && fn();
+					}, 100);
 			},
+			nextStation(){
+				this.exit(()=>{
+					this.goNextCountry();
+				});
 
+			},
 			playVideoByFirst(){
 				this.playVideo();
 
@@ -208,30 +249,42 @@
 
 			chooseCountry(index){
 				this.currentCountry = index;
-				
+				this.transY = this.viewH - 780;
 				
 			},
 			goCountry(){
 				if(this.currentCountry <= -1){
 					return;
 				}
+				this.wordsAnimation = false;
 				
 				this.showCountryDetail = true;
 				this.showCountry = false;
+				this.currentCountryObj.project = null;
 				this.currentCountryObj = Object.assign(this.currentCountryObj,window.config.countryList[this.currentCountry]);
 				var isSame = false;
+
 				this.viewCountrys.forEach((item)=>{ 
 					if(this.currentCountryObj.name === item.name){
 						isSame = true;
 					}
 				})
 				!isSame && this.viewCountrys.push(JSON.parse(JSON.stringify(this.currentCountryObj)));
-				
+				setTimeout(() => {
+					this.wordsAnimation = true;
+				}, 100);
 			},
 
 			goNextCountry(){
 				this.showCountry = true;
 				this.initTicket();
+				this.transY = 0 ;
+				this.transX = -350;
+				this.currentCountryObj.index = 0;
+				setTimeout(() => {
+					this.transY = this.viewH - 780 ;
+					this.scroll.refresh();
+				}, 100);
 			},
 		
 			imgStart(e){
@@ -250,6 +303,8 @@
 				});
 			},
 			initTicket(){
+
+				return;
 				var canvas = this.$refs['canvas'];
 				var context = canvas.getContext('2d');
 				var lingrad = context.createLinearGradient(0,0,0,canvas.height);
@@ -284,6 +339,8 @@
 				this.scroll = new IScroll(this.$refs['country'],{
 					scrollX:true
 				});
+				
+			
 
 				this.showPlane1 = true;
 
@@ -292,7 +349,7 @@
 					data:'plane'
 				})
 
-				var bgratio = 1080/1920;
+				var bgratio = 750/1468;
 				if((innerWidth/innerHeight)<=9/16){
 					this.videoWidth = parseInt(bgratio*innerHeight)+'px';
 					this.videoHeight = window.innerHeight+'px';

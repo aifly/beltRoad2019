@@ -2,6 +2,10 @@
 	<transition name='loading'>
 		<section v-if='show'  class="lt-full zmiti-share-main-ui" :class='{"active":createImg}'>
 			<div  class='lt-full' ref='page1' :style="{WebkitFilter:'blur('+(createImg?'10px':0)+')',background:'url('+imgs.shareBg+') no-repeat left bottom ',backgroundSize:'cover'}" >
+				<div class='zmiti-share-title'>
+					<img :src="imgs.shareTitle" alt="">
+					<span>{{countryList.length}}</span>
+				</div>
 				<div class="zmiti-index-logo">
 					<img :src="imgs.logo" alt="">
 				</div>
@@ -199,10 +203,13 @@
 				setTimeout(() => {
 					this.countryList = data;
 				}, 1);
+
+				window.wxHandlercallback('','我与AI主播同游了'+data.length+'个国家',document.title);
 				setTimeout(() => {
 					this.html2img();
 				}, 1000);
 			})
+
 			
 		}
 	}

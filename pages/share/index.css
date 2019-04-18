@@ -51,6 +51,22 @@
   z-index: 102;
 }
 
+.zmiti-share-main-ui .zmiti-share-title {
+  position: absolute;
+  width: 70%;
+  left: 15%;
+  top: 10vh;
+}
+
+.zmiti-share-main-ui .zmiti-share-title span {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #fff;
+  font-size: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 140px;
+}
+
 .zmiti-share-main-ui .zmiti-share-point {
   position: absolute;
   left: 0;

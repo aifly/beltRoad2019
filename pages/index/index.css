@@ -43,8 +43,8 @@
 }
 
 .zmiti-index.index-enter-active, .zmiti-index.index-leave-active {
-  -webkit-transition: 2s 0.1s;
-  transition: 2s 0.1s;
+  -webkit-transition: 1s 0.1s;
+  transition: 1s 0.1s;
 }
 
 .zmiti-index.index-leave-to, .zmiti-index.index-enter {

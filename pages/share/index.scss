@@ -2,7 +2,7 @@
 
 .zmiti-share-main-ui {
     z-index: 1119;
-
+    
     &.active{
         &:before{
             content:'';
@@ -13,6 +13,20 @@
             top: 0;
             background: rgba(0,0,0,.5);
             z-index: 102;;
+        }
+    }
+    .zmiti-share-title {
+        @include pos(a);
+        width: 70%;
+        left: 15%;
+        top: 10vh;
+        span{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color:#fff;
+            font-size:60px;
+            @include pos(a);
+            bottom: 0;
+            left: 140px;;
         }
     }
     .zmiti-share-point {
