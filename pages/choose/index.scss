@@ -19,10 +19,14 @@ $color: #ca141f;
 	&>.zmiti-country-detail{
 
         &>.lt-full{
-             &.country-enter-active,
-             &.country-leave-active {
-                 @include transition(opacity 2s 0.1s);
-             }
+            &.active{
+                z-index:10;
+                opacity:1;
+            }
+            &.country-enter-active,
+            &.country-leave-active {
+                @include transition(opacity 2s 0.1s);
+            }
 
              &.country-leave-to,
              &.country-enter {
@@ -54,7 +58,8 @@ $color: #ca141f;
 			bottom: 30px;
 			@include displayBox(horizontal);
 			width: 90%;
-			left: 3%;
+            left: 3%;
+            z-index:100;
 			
 		}
 	}

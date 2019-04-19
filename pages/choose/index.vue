@@ -77,9 +77,9 @@
 		</transition>
 
 		<transition name='detail'>
-			<div class='zmiti-country-detail' v-if='showCountryDetail'>
+			<div class='zmiti-country-detail lt-full' v-if='showCountryDetail'>
 				<transition name='country'>
-					<div class='lt-full' v-if='i === currentCountryObj.index' v-for='(bg,i) in currentCountryObj.cityImgs' :key="i" :style="{background:'url('+bg+') no-repeat center bottom',backgroundSize:'cover'}"></div>
+					<div class='lt-full' v-if='i === currentCountryObj.index' v-for='(bg,i) in currentCountryObj.cityImgs' :key="i" :style="{background:'url('+bg.bg+') no-repeat center bottom',backgroundSize:bg.size}"></div>
 				</transition>
 				<div class='zmiti-country-name' v-if='!showCountry'>
 					<img :src="imgs.countryTop" alt="">
@@ -280,16 +280,20 @@
 				this.showCountryDetail = true;
 				this.showCountry = false;
 				this.currentCountryObj.project = null;
-				this.currentCountryObj = Object.assign(this.currentCountryObj,window.config.countryList[this.currentCountry]);
-				var isSame = false;
-				this.daoyuAudio && this.daoyuAudio.pause();
+				this.currentCountryObj.cityImgs = [];
+				setTimeout(() => {
+					this.currentCountryObj = Object.assign(this.currentCountryObj,window.config.countryList[this.currentCountry]);
+					var isSame = false;
+					this.daoyuAudio && this.daoyuAudio.pause();
 
-				this.viewCountrys.forEach((item)=>{ 
-					if(this.currentCountryObj.name === item.name){
-						isSame = true;
-					}
-				})
-				!isSame && this.viewCountrys.push(JSON.parse(JSON.stringify(this.currentCountryObj)));
+					this.viewCountrys.forEach((item)=>{ 
+						if(this.currentCountryObj.name === item.name){
+							isSame = true;
+						}
+					})
+					!isSame && this.viewCountrys.push(JSON.parse(JSON.stringify(this.currentCountryObj)));
+				}, 10);
+				this.stopTimer();
 				setTimeout(() => {
 					this.wordsAnimation = true;
 					this.$refs['audio'].currentTime =  0;
@@ -345,28 +349,10 @@
 			initTicket(){
 
 				return;
-				var canvas = this.$refs['canvas'];
-				var context = canvas.getContext('2d');
-				var lingrad = context.createLinearGradient(0,0,0,canvas.height);
-				lingrad.addColorStop(0,'#067cc1');
-				lingrad.addColorStop(1,'#057ec2');
-				context.fillStyle = lingrad;
-				context.fillRect(0,0,canvas.width,canvas.height);
-				context.globalCompositeOperation = 'xor';
-				var r = 30;
-				context.fillStyle = 'red';
-				context.beginPath();
-				context.arc(0,canvas.height,r,0,Math.PI*2,false);
-				context.fill();
-
-				context.fillStyle = 'red';
-				context.beginPath();
-				context.arc(canvas.width,canvas.height,r,0,Math.PI*2,false);
-				context.fill();
-
-				!this.canvasBg && (this.canvasBg = canvas.toDataURL());
+			
 			},
 			initTimer (){
+				this.currentCountryObj.index = 0;
 				this.stopTimer();
 				this.countryTimer = setInterval(() => {
 					if(this.currentCountryObj.name){

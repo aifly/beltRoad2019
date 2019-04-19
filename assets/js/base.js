@@ -276,63 +276,63 @@ window.config = {
 	countryList: [{
 			name: '蒙古',
 			img: imgs.menggu,
-			cityImgs: [imgs.menggu_1, imgs.menggu_2, imgs.menggu_3, imgs.menggu_4],
+			cityImgs: [{bg:imgs.menggu_1,size:'cover'}, {bg:imgs.menggu_2,size:'cover'}, {bg:imgs.menggu_3,size:'cover'}, {bg:imgs.menggu_4,size:'cover'}],
 			position: [600, 680],
 			daoyu: "蒙古与我国接壤，是素有“草原之国”美称的亚洲内陆国家。在“一带一路”的倡议框架之下，中蒙两国在各领域交流合作，在首都乌兰巴托，中企承建了蒙古国首座互通式立交桥，并于去年11月2日正式通车。",
 			audio:'./assets/music/menggu.mp3',
 		}, {
 			name: '哈萨克斯坦',
 			img: imgs.hasakesitan,
-			cityImgs: [imgs.hasakesitan_1, imgs.hasakesitan_2, imgs.hasakesitan_3, imgs.hasakesitan_4, imgs.hasakesitan_5],
+			cityImgs: [{bg:imgs.hasakesitan_1,size:'cover'}, {bg:imgs.hasakesitan_2,size:'cover'}, {bg:imgs.hasakesitan_3,size:'cover'}, {bg:imgs.hasakesitan_4,size:'cover'}, {bg:imgs.hasakesitan_5,size:'cover'}],
 			daoyu: "一路向西，我们来到了哈萨克斯坦首都：努尔苏丹。努尔苏丹在历史上就曾是古代丝绸之路上的重要一站。随着一带一路倡议的提出，由中国企业承建的阿斯塔纳轻轨项目成为亮点，是哈萨克斯坦首条城市轻轨。",
 			audio:'./assets/music/hasakesitan.mp3'
 		}, {
 			name: '俄罗斯',
 			img: imgs.eluosi,
-			cityImgs: [imgs.eluosi_1, imgs.eluosi_2, imgs.eluosi_3, imgs.eluosi_4],
+			cityImgs: [{bg:imgs.eluosi_1,size:'cover'}, {bg:imgs.eluosi_2,size:'cover'}, {bg:imgs.eluosi_3,size:'cover'}, {bg:imgs.eluosi_4,size:'cover'}],
 			daoyu: "提起俄罗斯，你的耳畔响起的是那首爱情歌曲《喀秋莎》，还是“海豚音”歌手维塔斯的超高音？谈起诗歌文学，你最先想到的是《假如生活欺骗了你》还是《战争与和平》？近年来，俄罗斯也刮起了一阵学习中文的热潮。",
 			audio:'./assets/music/eluosi.mp3',
 		}, {
 			name: '白俄罗斯',
 			img: imgs.baieluosi,
-			cityImgs: [imgs.baieluosi_1, imgs.baieluosi_2, imgs.baieluosi_3, imgs.baieluosi_4, imgs.baieluosi_5],
+			cityImgs: [{bg:imgs.baieluosi_1,size:'cover'}, {bg:imgs.baieluosi_2,size:'cover'}, {bg:imgs.baieluosi_3,size:'cover'}, {bg:imgs.baieluosi_4,size:'cover'}, {bg:imgs.baieluosi_5,size:'cover'}],
 			daoyu: "接下来，我们来到东欧内陆国家白俄罗斯。在首都明斯克以东25公里,是总面积将达91.5平方公里的中白工业园，这是中国企业在全球范围参与建设的最大海外工业园区，也是中白合作共建丝绸之路经济带的标志性工程。",
 			audio:'./assets/music/baieluosi.mp3',
 
 		}, {
 			name: '立陶宛',
 			img: imgs.litaowan,
-			cityImgs: [imgs.litaowan_1, imgs.litaowan_2, imgs.litaowan_3, imgs.litaowan_4, imgs.litaowan_5],
+			cityImgs: [{bg:imgs.litaowan_1,size:'cover'}, {bg:imgs.litaowan_2,size:'cover'}, {bg:imgs.litaowan_3,size:'cover'}, {bg:imgs.litaowan_4,size:'cover'}, {bg:imgs.litaowan_5,size:'cover'}],
 			daoyu: "这一站，我们来到位于波罗的海东岸的立陶宛首都维尔纽斯。这里有古老而精美的房屋、桥梁、雕塑和城堡，还有立陶宛最大的集市——卡祖卡斯集市。随着“一带一路”倡议的推进，在卡祖卡斯集市上看到许多中国商品的身影呢！",
 			audio:'./assets/music/litaowan.mp3',
 		}, {
 			name: '波兰',
 			img: imgs.bolan,
-			cityImgs: [imgs.bolan_1, imgs.bolan_2, imgs.bolan_3, imgs.bolan_4],
+			cityImgs: [{bg:imgs.bolan_1,size:'cover'}, {bg:imgs.bolan_2,size:'cover'}, {bg:imgs.bolan_3,size:'cover'}, {bg:imgs.bolan_4,size:'cover'}],
 			daoyu: "波兰是一片神奇的土地，当中欧班列停靠在波兰时，乳制品等波兰特产源源不断地来到中国。与此同时，中国也积极参与到了波兰的建设中，2018年，中企承建的波兰科杰尼采输变电工程竣工，这可是中国在欧盟国家完工的首个输变电工程总承包项目哦。",
 			audio:'./assets/music/bolan.mp3',
 		}, {
 			name: '意大利',
 			img: imgs.yidali,
-			cityImgs: [imgs.yidali_1, imgs.yidali_2, imgs.yidali_3, imgs.yidali_4],
+			cityImgs: [{bg:imgs.yidali_1,size:'cover'}, {bg:imgs.yidali_2,size:'cover'}, {bg:imgs.yidali_3,size:'cover'}, {bg:imgs.yidali_4,size:'cover'}],
 			daoyu: "意大利是古罗马文明的发源地和文艺复兴的摇篮，也是古丝绸之路的另一端，如今我们用“一带一路”继续新时代的亚欧大陆互联互通。今年3月，意大利与中国签署共建“一带一路”谅解备忘录，共建“一带一路”的朋友圈在这个春天继续扩大。走，让我们在罗马的许愿池边留下美好心愿。",
 			audio:'./assets/music/yidali.mp3',
 		}, {
 			name: '希腊',
 			img: imgs.xila,
-			cityImgs: [imgs.xila_1, imgs.xila_2, imgs.xila_3, imgs.xila_4, imgs.xila_5],
+			cityImgs: [{bg:imgs.xila_1,size:'cover'}, {bg:imgs.xila_2,size:'cover'}, {bg:imgs.xila_3,size:'cover'}, {bg:imgs.xila_4,size:'cover'}, {bg:imgs.xila_5,size:'cover'}],
 			daoyu: "依傍在浪漫的爱情海边，希腊是欧洲文明的发祥地。瞧，一艘远到而来的货轮正驶进比雷埃夫斯港，这是来自中国的超大型集装箱货轮“中远海运双鱼座”轮。东西方文明在现世交融，相信在未来会缔造出新的精彩！",
 			audio:'./assets/music/xila.mp3',
 		}, {
 			name: '越南',
 			img: imgs.yuenan,
-			cityImgs: [imgs.yuenan_1, imgs.yuenan_2, imgs.yuenan_3, imgs.yuenan_4, imgs.yuenan_5],
+			cityImgs: [{bg:imgs.yuenan_1,size:'cover'}, {bg:imgs.yuenan_2,size:'cover'}, {bg:imgs.yuenan_3,size:'cover'}, {bg:imgs.yuenan_4,size:'cover'}, {bg:imgs.yuenan_5,size:'cover'}],
 			daoyu: "越南很美！你知道吗，从广西南宁出发，T8701/8702次国际旅客列车可直通越南河内（嘉林）。在日复一日的夕发朝至中，这班列车已经陪伴旅客走过了十年。说起两国间的友谊，由中方援建的越中友谊宫不仅是中越传统友好的见证，更是两国民心相通的桥梁。",
 			audio:'./assets/music/yuenan.mp3',
 		}, {
 			name: '泰国',
 			img: imgs.taiguo,
-			cityImgs: [imgs.taiguo_1, imgs.taiguo_2, imgs.taiguo_3, imgs.taiguo_4],
+			cityImgs: [{bg:imgs.taiguo_1,size:'cover'}, {bg:imgs.taiguo_2,size:'cover'}, {bg:imgs.taiguo_3,size:'cover'}, {bg:imgs.taiguo_4,size:'cover'}],
 			daoyu: "今年（2019年）2月，泰国开通了针对21个国家和地区游客的新版电子落地签系统。随着“一带一路”相关合作政策不断推向深入，中国赴泰游客人次增长提速。借助“一带一路”倡议，中泰两国合作前景将更加广阔!",
 			audio:'./assets/music/taiguo.mp3',
 		},
@@ -344,13 +344,13 @@ window.config = {
 		{
 			name: '埃及',
 			img: imgs.aiji,
-			cityImgs: [imgs.aiji_1, imgs.aiji_2,imgs.aiji_3,imgs.aiji_4],
+			cityImgs: [{bg:imgs.aiji_1,size:'cover'}, {bg:imgs.aiji_2,size:'cover'},{bg:imgs.aiji_3,size:'cover'},{bg:imgs.aiji_4,size:'cover'}],
 			daoyu: '这一站我们来到古老的埃及。境内的苏伊士运河不仅对埃及的经济发展举足轻重，也在全球物流中有难以替代的意义。如今，这条河也在“一带一路”中发挥了重要作用。在苏伊士运河经济区，有7平方公里多的区域成为中埃苏伊士经贸合作区，目前入驻企业77家，总投资额达10亿美元。',
 			audio:'./assets/music/aiji.mp3',
 		}, {
 			name: '马尔代夫',
 			img: imgs.maerdaifu,
-			cityImgs: [imgs.maerdaifu_1, imgs.maerdaifu_2, imgs.maerdaifu_3, imgs.maerdaifu_4],
+			cityImgs: [{bg:imgs.maerdaifu_1,size:'cover'}, {bg:imgs.maerdaifu_2,size:'cover'}, {bg:imgs.maerdaifu_3,size:'cover'}, {bg:imgs.maerdaifu_4,size:'cover'}],
 			daoyu: '这里是蜜月圣地、度假天堂马尔代夫，碧海银沙、椰风拂动让这个印度洋上的群岛国家魅力四射。这里的中马友谊大桥是两国共建“２１世纪海上丝绸之路”的标志项目，来，一起去桥上兜兜风。',
 			audio:'./assets/music/maerdaifu.mp3',
 		}
@@ -362,7 +362,7 @@ window.config = {
 		, {
 			name: '土耳其',
 			img: imgs.tuerqi,
-			cityImgs: [imgs.tuerqi_1, imgs.tuerqi_2, imgs.tuerqi_3, imgs.tuerqi_4],
+			cityImgs: [{bg:imgs.tuerqi_1,size:'cover'}, {bg:imgs.tuerqi_2,size:'cover'}, {bg:imgs.tuerqi_3,size:'cover'}, {bg:imgs.tuerqi_4,size:'cover'}],
 			daoyu: "想坐热气球？来土耳其就对了！从古丝路的重要驿站，到如今“一带一路”的重要站点，土耳其与中国的关系一直非常密切。全长533公里的安伊高铁有158公里是中国企业参与修建的。来，让我们一起搭乘安伊高铁，体验出行新速度。",
 			audio:'./assets/music/tuerqi.mp3',
 			project:{
@@ -373,31 +373,31 @@ window.config = {
 		}, {
 			name: '斯里兰卡',
 			img: imgs.sililank,
-			cityImgs: [imgs.sililank_1, imgs.sililank_2, imgs.sililank_3, imgs.sililank_4],
+			cityImgs: [{bg:imgs.sililank_1,size:'cover'}, {bg:imgs.sililank_2,size:'cover'}, {bg:imgs.sililank_3,size:'cover'}, {bg:imgs.sililank_4,size:'cover'}],
 			daoyu: "这里是“印度洋中的一滴眼泪”，斯里兰卡。今年4月，中国企业承建了斯里兰卡自独立以来的第一条新建铁路。这个斯中在“一带一路”合作框架下的首个铁路工程，也开启了斯里兰卡铁路史的新篇章。",
 			audio:'./assets/music/sililank.mp3',
 		}, {
 			name: '埃塞俄比亚',
 			img: imgs.aisaiebiya,
-			cityImgs: [imgs.aisaiebiya_1, imgs.aisaiebiya_2, imgs.aisaiebiya_3],
+			cityImgs: [{bg:imgs.aisaiebiya_1,size:'cover'}, {bg:imgs.aisaiebiya_2,size:'cover'}, {bg:imgs.aisaiebiya_3,size:'cover'}],
 			daoyu: "铁路项目业已成为中国在非洲推进“一带一路”建设的“国家名片”。亚吉铁路通道是中国在非洲修建的又一条跨国铁路，被誉为“新时期的坦赞铁路”。2018年1月，亚吉铁路正式开始商业运营，货物从吉布提港运输至亚的斯亚贝巴的时间从约８天缩短为１０余个小时。",
 			audio:'./assets/music/aisaiebiya.mp3',
 		}, {
 			name: '多米尼加',
 			img: imgs.duominijia,
-			cityImgs: [imgs.duominijia_1, imgs.duominijia_2, imgs.duominijia_3],
+			cityImgs: [{bg:imgs.duominijia_1,size:'cover'}, {bg:imgs.duominijia_2,size:'cover'}, {bg:imgs.duominijia_3,size:'cover'}],
 			daoyu: "提起多米尼加，你可能会想到琥珀、雪茄、狂欢节。多米尼加地理位置优越，是参与“一带一路”建设的天然合作伙伴。2018年5月1日两国建交，多米尼加现已成为中国公民组团出境旅游目的地。多政府正在考虑对中国公民简化签证手续。去多米尼加打卡？说走就走！",
 			audio:'./assets/music/duominijia.mp3',
 		}, {
 			name: '巴布亚新几内亚',
 			img: imgs.babuyaxinjineiya,
-			cityImgs: [imgs.babuyaxinjineiya_1, imgs.babuyaxinjineiya_2, imgs.babuyaxinjineiya_3],
+			cityImgs: [{bg:imgs.babuyaxinjineiya_1,size:'cover'}, {bg:imgs.babuyaxinjineiya_2,size:'cover'}, {bg:imgs.babuyaxinjineiya_3,size:'cover'}],
 			daoyu: "这一站我们来到21世纪海上丝绸之路南太平洋段的“明珠”——巴布亚新几内亚。作为面积最大、人口最多的太平洋岛国，巴新去年５月正式加入亚洲基础设施投资银行；６月，巴新成为首个与中国签署共建“一带一路”合作协议的太平洋岛国。 ",
 			audio:'./assets/music/babuyaxinjineiya.mp3',
 		}, {
 			name: '坦桑尼亚',
 			img: imgs.tansangniya,
-			cityImgs: [imgs.tansangniya_1, imgs.tansangniya_2],
+			cityImgs: [{bg:imgs.tansangniya_1,size:'cover'}, {bg:imgs.tansangniya_2,size:'cover'}],
 			daoyu: "在中非多年的携手合作中，“中国铁路”是亮丽的一笔。作为中国政府对外援助修建的第一条铁路，坦赞铁路是坦桑尼亚、赞比亚两国的交通大动脉，这条象征着中非友谊的钢铁大道，是中坦赞人民永不褪色的友谊之路。",
 			audio: './assets/music/tansangniya.mp3', 
 			project: {
@@ -408,14 +408,14 @@ window.config = {
 		}, {
 			name: '古巴',
 			img: imgs.guba,
-			cityImgs: [imgs.guba_1, imgs.guba_2, imgs.guba_3, imgs.guba_4],
+			cityImgs: [{bg:imgs.guba_1,size:'cover'}, {bg:imgs.guba_2,size:'cover'}, {bg:imgs.guba_3,size:'cover'}, {bg:imgs.guba_4,size:'cover'}],
 			daoyu: "这里是美丽的加勒比岛国古巴，碧海蓝天之中弥漫着浓浓的拉丁风情。旅游业是古巴支柱产业，不少中国游客对古巴充满向往。看呐！热情的古巴人正愉快地跳着他们的广场舞“萨尔萨舞”， 我们何不也去体验一把？",
 			audio:'./assets/music/guba.mp3',
 		}, {
 			name: '厄瓜多尔',
 			img: imgs.eguaduoer,
-			cityImgs: [imgs.eguaduoer_1, imgs.eguaduoer_2, imgs.eguaduoer_3],
-			daoyu: "这里是美丽的加勒比岛国古巴，碧海蓝天之中弥漫着浓浓的拉丁风情。旅游业是古巴支柱产业，不少中国游客对古巴充满向往。看呐！热情的古巴人正愉快地跳着他们的广场舞“萨尔萨舞”， 我们何不也去体验一把？",
+			cityImgs: [{bg:imgs.eguaduoer_1,size:'cover'}, {bg:imgs.eguaduoer_2,size:'cover'}, {bg:imgs.eguaduoer_3,size:'cover'}],
+			daoyu: "玫瑰玫瑰我爱你，你手中代表爱意和浪漫的玫瑰可能来自遥远的南美。良好的地理和气候优势让厄瓜多尔拥有超过400种玫瑰，去年，厄瓜多尔对华出口玫瑰和满天星的出口量达到1700吨。此外，超过90家中资企业在厄开展业务，涵盖水利水电、路桥、公共安全等领域。",
 			audio: './assets/music/eguaduoer.mp3',
 		}
 	]

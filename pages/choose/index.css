@@ -52,6 +52,11 @@
   -webkit-box-orient: vertical;
 }
 
+.zmiti-choose-main-ui > .zmiti-country-detail > .lt-full.active {
+  z-index: 10;
+  opacity: 1;
+}
+
 .zmiti-choose-main-ui > .zmiti-country-detail > .lt-full.country-enter-active, .zmiti-choose-main-ui > .zmiti-country-detail > .lt-full.country-leave-active {
   -webkit-transition: opacity 2s 0.1s;
   transition: opacity 2s 0.1s;
@@ -93,6 +98,7 @@
   -webkit-box-orient: horizontal;
   width: 90%;
   left: 3%;
+  z-index: 100;
 }
 
 .zmiti-choose-main-ui.show {
