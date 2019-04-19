@@ -1,7 +1,7 @@
 ﻿@import "../css/base.scss";
 
 .zmiti-share-main-ui {
-    z-index: 1119;
+    z-index: 21119;
     
     &.active{
         &:before{
@@ -17,22 +17,22 @@
     }
     .zmiti-share-title {
         @include pos(a);
-        width: 70%;
-        left: 15%;
-        top: 10vh;
+        width: 60%;
+        left: 20%;
+        top: 5vh;
         span{
             font-family: Georgia, 'Times New Roman', Times, serif;
             color:#fff;
-            font-size:60px;
+            font-size:55px;
             @include pos(a);
-            bottom: 0;
-            left: 140px;;
+            bottom: -10px;
+            left: 110px;;
         }
     }
     .zmiti-share-point {
         @include pos(a);
         left: 0;
-        bottom: 140px;
+        bottom: 120px;
         width: 100%;
     }
     .zmiti-point-C{

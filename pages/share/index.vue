@@ -35,7 +35,7 @@
 			<div class='zmiti-mask' v-if='showMask' @touchstart='showMask = false'>
 				<img :src="imgs.arrow" alt="">
 			</div>
-
+			<audio :src='end' ref='audio'></audio>
 		</section>
 	</transition>
 </template>
@@ -45,9 +45,7 @@
 	import zmitiUtil from '../lib/util';
 	import Point from '../lib/point';
 	import '../lib/html2canvas';
-	var countryPosition = [
-		
-	];
+	var countryPosition = [];
 	export default {
 		props:['width','obserable'],
 		name:'zmitiindex',
@@ -58,6 +56,7 @@
 				showAudio:false,
 				showMask:false,
 				countryList:[],
+				end:window.config.end,
 				isAndroid:navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1,
 				showQrcode:false,
 				countryPosition:window.config.countryPosition,
@@ -91,7 +90,7 @@
 				this.obserable.trigger({
 					type:'clearCountry'
 				})
-
+				this.$refs['audio'].pause();
 			},
 
 
@@ -120,16 +119,7 @@
 			updatePv(){
 				var s = this;
 
-                axios.post('http://h5.wenming.cn/v1/wmshare/h5_view/?h5id=ypb-qmj&appsecret=c9GxtUre3kOJCgvp&sign=1', {})
-				.then(function (data) {//sign:2 表示两位数随机
-                        var dt = data.data;
-						if(dt.getret === 0){
-							s.pv = dt.data.num1;
-							console.log(dt.data)
-							//wxHandlercallback('','请为英烈点燃第'+s.pv+'盏灯');
-							
-						}
-                    });
+               
 
  				axios.post('https://xlive.xinhuaapp.com/xhs-security-activity/activity/num/updateNum', {
                         "secretKey": window.config.secretKey, // 请求秘钥
@@ -202,7 +192,11 @@
 				this.show = true;
 				setTimeout(() => {
 					this.countryList = data;
+					this.$refs['audio'].play();
 				}, 1);
+
+
+				
 
 				window.wxHandlercallback('','我与AI主播同游了'+data.length+'个国家',document.title);
 				setTimeout(() => {
@@ -210,6 +204,10 @@
 				}, 1000);
 			})
 
+			/* this.obserable.trigger({
+				type:"showSharePage",
+				data:window.config.countryList
+			}) */
 			
 		}
 	}

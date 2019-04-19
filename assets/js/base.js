@@ -25,88 +25,10 @@
 	//shatealabo: "./assets/images/shatealabo.png",
 	hasakesitan: "./assets/images/hasakesitan.png",
 	maerdaifu: "./assets/images/maerdaifu.png",
+	eguaduoer: "./assets/images/eguaduoer.png",
+	guba: "./assets/images/guba.png",
 
-	hasakesitan_1: "./assets/images/hasakesitan_1.jpg",
-	hasakesitan_2: "./assets/images/hasakesitan_2.jpg",
-	hasakesitan_3: "./assets/images/hasakesitan_3.jpg",
-	hasakesitan_4: "./assets/images/hasakesitan_4.jpg",
-	hasakesitan_5: "./assets/images/hasakesitan_5.jpg",
-
-	menggu_1: "./assets/images/menggu_1.jpg",
-	menggu_2: "./assets/images/menggu_2.jpg",
-	menggu_3: "./assets/images/menggu_3.jpg",
-	menggu_4: "./assets/images/menggu_4.jpg",
-	menggu_5: "./assets/images/menggu_5.jpg",
-	eluosi_1: "./assets/images/eluosi_1.jpg",
-	eluosi_2: "./assets/images/eluosi_2.jpg",
-
-	baieluosi_1: "./assets/images/baieluosi_1.jpg",
-	baieluosi_2: "./assets/images/baieluosi_2.jpg",
-	baieluosi_3: "./assets/images/baieluosi_3.jpg",
-	baieluosi_4: "./assets/images/baieluosi_4.jpg",
-	baieluosi_5: "./assets/images/baieluosi_5.jpg",
-
-	litaowan_1: "./assets/images/litaowan_1.jpg",
-	litaowan_2: "./assets/images/litaowan_2.jpg",
-	litaowan_3: "./assets/images/litaowan_3.jpg",
-	litaowan_4: "./assets/images/litaowan_4.jpg",
-	litaowan_5: "./assets/images/litaowan_5.jpg",
-
-
-	bolan_1: "./assets/images/bolan_1.jpg",
-	bolan_2: "./assets/images/bolan_2.jpg",
-	bolan_3: "./assets/images/bolan_3.jpg",
-
-	yidali_1: "./assets/images/yidali_1.jpg",
-	yidali_2: "./assets/images/yidali_2.jpg",
-	yidali_3: "./assets/images/yidali_3.jpg",
-	yidali_4: "./assets/images/yidali_4.jpg",
-
-	xila_1: "./assets/images/xila_1.jpg",
-	xila_2: "./assets/images/xila_2.jpg",
-	xila_3: "./assets/images/xila_3.jpg",
-	xila_4: "./assets/images/xila_4.jpg",
-
-	yuenan_1: "./assets/images/yuenan_1.jpg",
-	yuenan_2: "./assets/images/yuenan_2.jpg",
-	yuenan_3: "./assets/images/yuenan_3.jpg",
 	
-	maerdaifu_1: "./assets/images/maerdaifu_1.jpg",
-	maerdaifu_2: "./assets/images/maerdaifu_2.jpg",
-	maerdaifu_3: "./assets/images/maerdaifu_3.jpg",
-
-	taiguo_1: "./assets/images/taiguo_1.jpg",
-	taiguo_2: "./assets/images/taiguo_2.jpg",
-	taiguo_3: "./assets/images/taiguo_3.jpg",
-	taiguo_4: "./assets/images/taiguo_4.jpg",
-
-
-	aiji_1: "./assets/images/aiji_1.jpg",
-	aiji_2: "./assets/images/aiji_2.jpg",
-	aiji_3: "./assets/images/aiji_3.jpg",
-	aiji_4: "./assets/images/aiji_4.jpg",
-
-
-	tuerqi_1: "./assets/images/tuerqi_1.jpg",
-	tuerqi_2: "./assets/images/tuerqi_2.jpg",
-	tuerqi_3: "./assets/images/tuerqi_3.jpg",
-	
-	sililank_1: "./assets/images/sililank_1.jpg",
-	sililank_2: "./assets/images/sililank_2.jpg",
-	sililank_3: "./assets/images/sililank_3.jpg",
-	
-	aisaiebiya_1: "./assets/images/aisaiebiya_1.jpg",
-	aisaiebiya_2: "./assets/images/aisaiebiya_2.jpg",
-	aisaiebiya_3: "./assets/images/aisaiebiya_3.jpg",
-	duominijia_1: "./assets/images/duominijia_1.jpg",
-	duominijia_2: "./assets/images/duominijia_2.jpg",
-	duominijia_3: "./assets/images/duominijia_3.jpg",
-	babuyaxinjineiya_1: "./assets/images/babuyaxinjineiya_1.jpg",
-	babuyaxinjineiya_2: "./assets/images/babuyaxinjineiya_2.jpg",
-	babuyaxinjineiya_3: "./assets/images/babuyaxinjineiya_3.jpg",
-	tansangniya_1: "./assets/images/tansangniya_1.jpg",
-	tansangniya_2: "./assets/images/tansangniya_2.jpg",
-	tansangniya_3: "./assets/images/tansangniya_3.jpg",
 	
 	cloud: "./assets/images/cloud.png",
 	no: "./assets/images/no.png",
@@ -116,6 +38,7 @@
 	restart: "./assets/images/restart.png",
 	invite: "./assets/images/invite.png",
 	zhubo: "./assets/images/zhubo.gif",
+	zhubo1: "./assets/images/zhubo.png",
 	to: "./assets/images/to.png",
 	poster1: "./assets/images/poster1.png",
 	poster2: "./assets/images/poster2.png",
@@ -144,15 +67,121 @@
 	sharePoint: './assets/images/share-point.png',
 	shareTitle: './assets/images/share-title.png',
 
+
+
+	hasakesitan_1: "./assets/images/hasakesitan_1.jpg",
+	hasakesitan_2: "./assets/images/hasakesitan_2.jpg",
+	hasakesitan_3: "./assets/images/hasakesitan_3.jpg",
+	hasakesitan_4: "./assets/images/hasakesitan_4.jpg",
+	hasakesitan_5: "./assets/images/hasakesitan_5.jpg",
+
+	menggu_1: "./assets/images/menggu_1.jpg",
+	menggu_2: "./assets/images/menggu_2.jpg",
+	menggu_3: "./assets/images/menggu_3.jpg",
+	menggu_4: "./assets/images/menggu_4.jpg",
+
+	eluosi_1: "./assets/images/eluosi_1_1.jpg",
+	eluosi_4: "./assets/images/eluosi_2_1.jpg",
+	eluosi_3: "./assets/images/eluosi_3.jpg",
+	eluosi_2: "./assets/images/eluosi_4.jpg",
+
+	baieluosi_1: "./assets/images/baieluosi_1.jpg",
+	baieluosi_2: "./assets/images/baieluosi_2.jpg",
+	baieluosi_3: "./assets/images/baieluosi_3.jpg",
+	baieluosi_4: "./assets/images/baieluosi_4.jpg",
+	baieluosi_5: "./assets/images/baieluosi_5.jpg",
+
+	litaowan_1: "./assets/images/litaowan_1.jpg",
+	litaowan_2: "./assets/images/litaowan_2.jpg",
+	litaowan_3: "./assets/images/litaowan_3.jpg",
+	litaowan_4: "./assets/images/litaowan_4.jpg",
+	litaowan_5: "./assets/images/litaowan_5.jpg",
+
+
+	bolan_1: "./assets/images/bolan_2_1.jpg",
+	bolan_2: "./assets/images/bolan_1_1.jpg",
+	bolan_3: "./assets/images/bolan_3_1.jpg",
+	bolan_4: "./assets/images/bolan_4_1.jpg",
+
+	yidali_1: "./assets/images/yidali_1.jpg",
+	yidali_2: "./assets/images/yidali_2.jpg",
+	yidali_3: "./assets/images/yidali_3.jpg",
+	yidali_4: "./assets/images/yidali_4.jpg",
+
+	xila_1: "./assets/images/xila_4.jpg",
+	xila_2: "./assets/images/xila_2.jpg",
+	xila_3: "./assets/images/xila_3.jpg",
+	xila_4: "./assets/images/xila_1.jpg",
+	xila_5: "./assets/images/xila_5.jpg",
+
+	yuenan_5: "./assets/images/yuenan_1.jpg",
+	yuenan_4: "./assets/images/yuenan_2.jpg",
+	yuenan_3: "./assets/images/yuenan_3.jpg",
+	yuenan_1: "./assets/images/yuenan_4.jpg",
+	yuenan_2: "./assets/images/yuenan_5.jpg",
+
+	maerdaifu_1: "./assets/images/maerdaifu_1.jpg",
+	maerdaifu_2: "./assets/images/maerdaifu_2.jpg",
+	maerdaifu_3: "./assets/images/maerdaifu_3.jpg",
+	maerdaifu_4: "./assets/images/maerdaifu_4.jpg",
+
+	taiguo_1: "./assets/images/taiguo_1_1.jpg",
+	taiguo_2: "./assets/images/taiguo_2.jpg",
+	taiguo_3: "./assets/images/taiguo_3.jpg",
+	taiguo_4: "./assets/images/taiguo_4.jpg",
+
+
+	aiji_1: "./assets/images/aiji_1_1.jpg",
+	aiji_2: "./assets/images/aiji_1_4.jpg",
+	aiji_3: "./assets/images/aiji_1_3.jpg", 
+	aiji_4: "./assets/images/aiji_1_2.jpg",
+
+
+	tuerqi_1: "./assets/images/tuerqi_1.jpg",
+	tuerqi_2: "./assets/images/tuerqi_3_1.jpg",
+	tuerqi_3: "./assets/images/tuerqi_2.jpg",
+	tuerqi_4: "./assets/images/tuerqi_4.jpg",
+
+	sililank_1: "./assets/images/sililank_4.jpg",
+	sililank_4: "./assets/images/sililank_1.jpg",
+	sililank_2: "./assets/images/sililank_2.jpg",
+	sililank_3: "./assets/images/sililank_3.jpg",
+
+	aisaiebiya_1: "./assets/images/aisaiebiya_1.jpg",
+	aisaiebiya_2: "./assets/images/aisaiebiya_2.jpg",
+	aisaiebiya_3: "./assets/images/aisaiebiya_3.jpg",
+	duominijia_1: "./assets/images/duominijia_1.jpg",
+	duominijia_2: "./assets/images/duominijia_2.jpg",
+	duominijia_3: "./assets/images/duominijia_3.jpg",
+	babuyaxinjineiya_1: "./assets/images/babuyaxinjineiya_1.jpg",
+	babuyaxinjineiya_2: "./assets/images/babuyaxinjineiya_2.jpg",
+	babuyaxinjineiya_3: "./assets/images/babuyaxinjineiya_3.jpg",
+	tansangniya_1: "./assets/images/tansangniya_1.jpg",
+	tansangniya_2: "./assets/images/tansangniya_2.jpg",
+	//tansangniya_3: "./assets/images/tansangniya_3.jpg",
+
+	guba_4: "./assets/images/guba_1_1.jpg",
+	guba_2: "./assets/images/guba_2.jpg",
+	guba_3: "./assets/images/guba_3.jpg",
+	guba_1: "./assets/images/guba_4.jpg",
+
+	eguaduoer_3: "./assets/images/eguaduoer_1.jpg",
+	eguaduoer_2: "./assets/images/eguaduoer_2.jpg",
+	eguaduoer_1: "./assets/images/eguaduoer_3.jpg",
+
 };
 
+var allArr = [];
 var arr = [];
 for (var attr in imgs) {
-	arr.push(imgs[attr]);
+	allArr.push(imgs[attr]);
 }
 
+arr = allArr.slice(0,60);
+var cacheArr = allArr.slice(60);
+
 window.config = {
-	audio1: './assets/music/audio1.mp3',
+	end: './assets/music/end.mp3',
 	audio2: './assets/music/audio2.mp3',
 	photo: './assets/music/photo.mp3',
 	audio3: './assets/music/audio3.mp3',
@@ -160,105 +189,107 @@ window.config = {
 	host: "https://xlive.xinhuaapp.com", //正式域名：https://testxlive.xinhuaapp.com
 	secretKey: "e9469538b0623783f38c585821459454",
 	daoyu: '尊敬的旅客您好！欢迎您搭乘本次“一带一路”号专机，我是新华社AI合成主播新小萌，我将全程陪同您完成本次旅行，一起度过一段难忘的美好时光！话不多说，let’s go!',
+	daoyuAudio:'./assets/music/daoyu.mp3',
 	countryPosition: [
 		{
 			x: 430,
-			y: 540
+			y: 540 - 20
 		},
 		{
 			x: 234,
-			y: 530
+			y: 530 - 20
 		},
 		{
 			x: 144,
-			y: 908
+			y: 908 - 20
 		},
 		{
 			x: 454,
-			y: 860
+			y: 860 - 20
 		},
 		{
 			x: 190,
-			y: 754
+			y: 754 - 20
 		},
 		{
 			x: 340,
-			y: 740
+			y: 740 - 20
 		},
 		{
 			x: 500,
-			y: 745
+			y: 745 - 20
 		},
 		{
 			x: 150,
-			y: 640
+			y: 640 - 20
 		},
 		{
 			x: 250,
-			y: 630
+			y: 630 - 20
 		},
 		{
 			x: 540,
-			y: 620
+			y: 620 - 20
 		},
 		{
 			x: 325,
-			y: 454
+			y: 454 - 20
 		},
 		{
 			x: 260,
-			y: 350
+			y: 350 - 20
 		},
 		{
 			x: 650,
-			y: 320
+			y: 320 - 20
 		},
 
 		{
 			x: 170,
-			y: 244
+			y: 244 - 20
 		},
 		{
 			x: 280,
-			y: 200
+			y: 200 - 20
 		},
 		{
 			x: 470,
-			y: 260
+			y: 260 - 20
 		},
 		{
 			x: 550,
-			y: 380
+			y: 380 - 20
 		},
 		{
 			x: 650,
-			y: 490
+			y: 490 - 20
+		},
+		{
+			x: 640,
+			y: 694 - 20
+		},
+		{
+			x: 630,
+			y: 564 - 20
 		}
 	],
 	countryList: [{
 			name: '蒙古',
 			img: imgs.menggu,
-			cityImgs: [imgs.menggu_1, imgs.menggu_2, imgs.menggu_3, imgs.menggu_4, imgs.menggu_5],
+			cityImgs: [imgs.menggu_1, imgs.menggu_2, imgs.menggu_3, imgs.menggu_4],
 			position: [600, 680],
 			daoyu: "蒙古与我国接壤，是素有“草原之国”美称的亚洲内陆国家。在“一带一路”的倡议框架之下，中蒙两国在各领域交流合作，在首都乌兰巴托，中企承建了蒙古国首座互通式立交桥，并于去年11月2日正式通车。",
-			audio:'./assets/music/[imgs.menggu_1, imgs.menggu_2, imgs.menggu_3, imgs.menggu_4, imgs.menggu_5].mp3',
+			audio:'./assets/music/menggu.mp3',
 		}, {
 			name: '哈萨克斯坦',
 			img: imgs.hasakesitan,
 			cityImgs: [imgs.hasakesitan_1, imgs.hasakesitan_2, imgs.hasakesitan_3, imgs.hasakesitan_4, imgs.hasakesitan_5],
 			daoyu: "一路向西，我们来到了哈萨克斯坦首都：努尔苏丹。努尔苏丹在历史上就曾是古代丝绸之路上的重要一站。随着一带一路倡议的提出，由中国企业承建的阿斯塔纳轻轨项目成为亮点，是哈萨克斯坦首条城市轻轨。",
-			audio:'./assets/music/hasakesitan.mp3',
-			project:{
-				name:'中哈合作项目',
-				poster:imgs.poster1,
-				video: './assets/video/3.mp4',
-				//video: 'http://h5.zhongguowangshi.com/h5/newyear2019/assets/video/index5.mp4'
-				//video: 'https://static.ws.126.net/163/f2e/gzabridge/img/gzabridge5.mp4',
-			}
+			audio:'./assets/music/hasakesitan.mp3'
 		}, {
 			name: '俄罗斯',
 			img: imgs.eluosi,
-			cityImgs: [imgs.eluosi_1, imgs.eluosi_2],
+			cityImgs: [imgs.eluosi_1, imgs.eluosi_2, imgs.eluosi_3, imgs.eluosi_4],
 			daoyu: "提起俄罗斯，你的耳畔响起的是那首爱情歌曲《喀秋莎》，还是“海豚音”歌手维塔斯的超高音？谈起诗歌文学，你最先想到的是《假如生活欺骗了你》还是《战争与和平》？近年来，俄罗斯也刮起了一阵学习中文的热潮。",
 			audio:'./assets/music/eluosi.mp3',
 		}, {
@@ -277,7 +308,7 @@ window.config = {
 		}, {
 			name: '波兰',
 			img: imgs.bolan,
-			cityImgs: [imgs.bolan_1, imgs.bolan_2, imgs.bolan_3],
+			cityImgs: [imgs.bolan_1, imgs.bolan_2, imgs.bolan_3, imgs.bolan_4],
 			daoyu: "波兰是一片神奇的土地，当中欧班列停靠在波兰时，乳制品等波兰特产源源不断地来到中国。与此同时，中国也积极参与到了波兰的建设中，2018年，中企承建的波兰科杰尼采输变电工程竣工，这可是中国在欧盟国家完工的首个输变电工程总承包项目哦。",
 			audio:'./assets/music/bolan.mp3',
 		}, {
@@ -289,13 +320,13 @@ window.config = {
 		}, {
 			name: '希腊',
 			img: imgs.xila,
-			cityImgs: [imgs.xila_1, imgs.xila_2, imgs.xila_3, imgs.xila_4],
+			cityImgs: [imgs.xila_1, imgs.xila_2, imgs.xila_3, imgs.xila_4, imgs.xila_5],
 			daoyu: "依傍在浪漫的爱情海边，希腊是欧洲文明的发祥地。瞧，一艘远到而来的货轮正驶进比雷埃夫斯港，这是来自中国的超大型集装箱货轮“中远海运双鱼座”轮。东西方文明在现世交融，相信在未来会缔造出新的精彩！",
 			audio:'./assets/music/xila.mp3',
 		}, {
 			name: '越南',
 			img: imgs.yuenan,
-			cityImgs: [imgs.yuenan_1, imgs.yuenan_2, imgs.yuenan_3],
+			cityImgs: [imgs.yuenan_1, imgs.yuenan_2, imgs.yuenan_3, imgs.yuenan_4, imgs.yuenan_5],
 			daoyu: "越南很美！你知道吗，从广西南宁出发，T8701/8702次国际旅客列车可直通越南河内（嘉林）。在日复一日的夕发朝至中，这班列车已经陪伴旅客走过了十年。说起两国间的友谊，由中方援建的越中友谊宫不仅是中越传统友好的见证，更是两国民心相通的桥梁。",
 			audio:'./assets/music/yuenan.mp3',
 		}, {
@@ -313,13 +344,13 @@ window.config = {
 		{
 			name: '埃及',
 			img: imgs.aiji,
-			cityImgs: [imgs.aiji_1, imgs.aiji_2, imgs.aiji_3, imgs.aiji_4],
+			cityImgs: [imgs.aiji_1, imgs.aiji_2,imgs.aiji_3,imgs.aiji_4],
 			daoyu: '这一站我们来到古老的埃及。境内的苏伊士运河不仅对埃及的经济发展举足轻重，也在全球物流中有难以替代的意义。如今，这条河也在“一带一路”中发挥了重要作用。在苏伊士运河经济区，有7平方公里多的区域成为中埃苏伊士经贸合作区，目前入驻企业77家，总投资额达10亿美元。',
 			audio:'./assets/music/aiji.mp3',
 		}, {
 			name: '马尔代夫',
 			img: imgs.maerdaifu,
-			cityImgs: [imgs.maerdaifu_1, imgs.maerdaifu_2, imgs.maerdaifu_3],
+			cityImgs: [imgs.maerdaifu_1, imgs.maerdaifu_2, imgs.maerdaifu_3, imgs.maerdaifu_4],
 			daoyu: '这里是蜜月圣地、度假天堂马尔代夫，碧海银沙、椰风拂动让这个印度洋上的群岛国家魅力四射。这里的中马友谊大桥是两国共建“２１世纪海上丝绸之路”的标志项目，来，一起去桥上兜兜风。',
 			audio:'./assets/music/maerdaifu.mp3',
 		}
@@ -331,7 +362,7 @@ window.config = {
 		, {
 			name: '土耳其',
 			img: imgs.tuerqi,
-			cityImgs: [imgs.tuerqi_1, imgs.tuerqi_2, imgs.tuerqi_3],
+			cityImgs: [imgs.tuerqi_1, imgs.tuerqi_2, imgs.tuerqi_3, imgs.tuerqi_4],
 			daoyu: "想坐热气球？来土耳其就对了！从古丝路的重要驿站，到如今“一带一路”的重要站点，土耳其与中国的关系一直非常密切。全长533公里的安伊高铁有158公里是中国企业参与修建的。来，让我们一起搭乘安伊高铁，体验出行新速度。",
 			audio:'./assets/music/tuerqi.mp3',
 			project:{
@@ -342,7 +373,7 @@ window.config = {
 		}, {
 			name: '斯里兰卡',
 			img: imgs.sililank,
-			cityImgs: [imgs.sililank_1, imgs.sililank_2, imgs.sililank_3],
+			cityImgs: [imgs.sililank_1, imgs.sililank_2, imgs.sililank_3, imgs.sililank_4],
 			daoyu: "这里是“印度洋中的一滴眼泪”，斯里兰卡。今年4月，中国企业承建了斯里兰卡自独立以来的第一条新建铁路。这个斯中在“一带一路”合作框架下的首个铁路工程，也开启了斯里兰卡铁路史的新篇章。",
 			audio:'./assets/music/sililank.mp3',
 		}, {
@@ -366,9 +397,26 @@ window.config = {
 		}, {
 			name: '坦桑尼亚',
 			img: imgs.tansangniya,
-			cityImgs: [imgs.tansangniya_1, imgs.tansangniya_2, imgs.tansangniya_3],
+			cityImgs: [imgs.tansangniya_1, imgs.tansangniya_2],
 			daoyu: "在中非多年的携手合作中，“中国铁路”是亮丽的一笔。作为中国政府对外援助修建的第一条铁路，坦赞铁路是坦桑尼亚、赞比亚两国的交通大动脉，这条象征着中非友谊的钢铁大道，是中坦赞人民永不褪色的友谊之路。",
-			audio:'./assets/music/tansangniya.mp3',
+			audio: './assets/music/tansangniya.mp3', 
+			project: {
+				name: '中坦合作项目',
+				poster: imgs.poster1,
+				video: './assets/video/4.mp4',
+			}
+		}, {
+			name: '古巴',
+			img: imgs.guba,
+			cityImgs: [imgs.guba_1, imgs.guba_2, imgs.guba_3, imgs.guba_4],
+			daoyu: "这里是美丽的加勒比岛国古巴，碧海蓝天之中弥漫着浓浓的拉丁风情。旅游业是古巴支柱产业，不少中国游客对古巴充满向往。看呐！热情的古巴人正愉快地跳着他们的广场舞“萨尔萨舞”， 我们何不也去体验一把？",
+			audio:'./assets/music/guba.mp3',
+		}, {
+			name: '厄瓜多尔',
+			img: imgs.eguaduoer,
+			cityImgs: [imgs.eguaduoer_1, imgs.eguaduoer_2, imgs.eguaduoer_3],
+			daoyu: "这里是美丽的加勒比岛国古巴，碧海蓝天之中弥漫着浓浓的拉丁风情。旅游业是古巴支柱产业，不少中国游客对古巴充满向往。看呐！热情的古巴人正愉快地跳着他们的广场舞“萨尔萨舞”， 我们何不也去体验一把？",
+			audio: './assets/music/eguaduoer.mp3',
 		}
 	]
 };
@@ -391,6 +439,16 @@ var musics = {
 	 	src: './assets/music/plane.mp3',
 	 	autoplay: 'autoplay',
 	 	name: 'plane',
+	 },
+	 start: {
+	 	src: './assets/music/start.mp3',
+	 	autoplay: 'autoplay',
+	 	name: 'start',
+	 },
+	 daoyu: {
+	 	src: './assets/music/daoyu.mp3',
+	 	autoplay: 'autoplay',
+	 	name: 'daoyu',
 	 }
 	/* ,
 	 audio2: {

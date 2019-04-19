@@ -7,7 +7,7 @@
 			<div class='zmiti-loading-ui' v-if='!loaded && showLoading' >
 				<div class='zmiti-loading-title'>{{title}}</div>
 				<div class='zmiti-loading-C'>
-					<div class='zmiti-loading-bar'  :style="{webkitTransform:'scale('+(width*.93)+',1)'}">  </div>
+					<div class='zmiti-loading-bar'  :style="{width:width*93+'%'}">  </div>
 					<img :style="{WebkitTransform:'translateX('+width*546+'px)'}" :src='imgs.loadingPlane' class='zmiti-loading-plane' />
 				</div>
 				<div class='zmiti-progress' >

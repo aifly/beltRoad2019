@@ -37,7 +37,7 @@
 }
 
 .zmiti-share-main-ui {
-  z-index: 1119;
+  z-index: 21119;
 }
 
 .zmiti-share-main-ui.active:before {
@@ -53,24 +53,24 @@
 
 .zmiti-share-main-ui .zmiti-share-title {
   position: absolute;
-  width: 70%;
-  left: 15%;
-  top: 10vh;
+  width: 60%;
+  left: 20%;
+  top: 5vh;
 }
 
 .zmiti-share-main-ui .zmiti-share-title span {
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: #fff;
-  font-size: 60px;
+  font-size: 55px;
   position: absolute;
-  bottom: 0;
-  left: 140px;
+  bottom: -10px;
+  left: 110px;
 }
 
 .zmiti-share-main-ui .zmiti-share-point {
   position: absolute;
   left: 0;
-  bottom: 140px;
+  bottom: 120px;
   width: 100%;
 }
 

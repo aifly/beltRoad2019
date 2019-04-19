@@ -97,7 +97,7 @@
 			</div>
 		</transition>
 		<div class='zmiti-zhubo'>
-			<img :src="imgs.zhubo" alt="">
+			<img :src="imgs[audioPlaying?'zhubo':'zhubo1']" alt="">
 		</div>
 		<div class='zmiti-broadcast'>
 			<div class='zmiti-xiaomeng'>
@@ -136,6 +136,8 @@
 		<div class="zmiti-tip lt-full" v-if='showTip' @touchstart='showTip = false'>
 			<img :src="imgs.tip" alt="">
 		</div>
+
+		<audio v-if='currentCountryObj.audio' :src='currentCountryObj.audio' ref='audio'></audio>
 	</div>
 </template>
 
@@ -152,6 +154,7 @@
 			return{
 				imgs:window.imgs,
 				daoyu:window.config.daoyu,
+				daoyuAudio:window.config.daoyuAudio,
 				show:false,
 				transX:-100,
 				canvasBg:imgs.ticket,
@@ -170,6 +173,7 @@
 				viewCountrys:[],
 				isPlaying:-1,
 				wordsWidth:0,
+				audioPlaying:false,
 
 				wordsAnimation:true,
 
@@ -199,14 +203,29 @@
 			},
 			showTip(val){
 				if(!val){
-						clearInterval(this.wordsTimer);
-						this.wordsTimer = setInterval(() => {
-							this.transX += 6;
-							///this.transX = Math.min(this.transX , this.wordsWidth - 350);
-							if(this.transX > this.wordsWidth - 350){
-								this.transX = -350;
-							}
-						}, 30);
+					clearInterval(this.wordsTimer);
+					this.wordsTimer = setInterval(() => {
+						this.transX += 4;
+						///this.transX = Math.min(this.transX , this.wordsWidth - 350);
+						if(this.transX > this.wordsWidth - 350){
+							this.transX = -350;
+						}
+					}, 30);
+
+					this.daoyuAudio = this.obserable.trigger({
+						type:'playVoice',
+						data:'daoyu'
+					});
+					this.daoyuAudio.addEventListener('play',()=>{
+						this.audioPlaying = true;
+					})
+					this.daoyuAudio.addEventListener('ended',()=>{
+						this.audioPlaying = false;
+					})
+					this.daoyuAudio.addEventListener('pause',()=>{
+						this.audioPlaying = false;
+					})
+					
 				}
 			}
 		},
@@ -263,6 +282,7 @@
 				this.currentCountryObj.project = null;
 				this.currentCountryObj = Object.assign(this.currentCountryObj,window.config.countryList[this.currentCountry]);
 				var isSame = false;
+				this.daoyuAudio && this.daoyuAudio.pause();
 
 				this.viewCountrys.forEach((item)=>{ 
 					if(this.currentCountryObj.name === item.name){
@@ -272,6 +292,18 @@
 				!isSame && this.viewCountrys.push(JSON.parse(JSON.stringify(this.currentCountryObj)));
 				setTimeout(() => {
 					this.wordsAnimation = true;
+					this.$refs['audio'].currentTime =  0;
+					this.$refs['audio'].play();
+					this.$refs['audio'].addEventListener('play',()=>{
+						this.audioPlaying = true;
+					})
+					this.$refs['audio'].addEventListener('ended',()=>{
+						this.audioPlaying = false;
+					})
+					this.$refs['audio'].addEventListener('pause',()=>{
+						this.audioPlaying = false;
+					})
+					this.initTimer();
 				}, 100);
 			},
 
@@ -284,7 +316,9 @@
 				setTimeout(() => {
 					this.transY = this.viewH - 780 ;
 					this.scroll.refresh();
+
 				}, 100);
+
 			},
 		
 			imgStart(e){
@@ -301,6 +335,12 @@
 					type:'showSharePage',
 					data:this.viewCountrys
 				});
+				this.$refs['audio'] && this.$refs['audio'].pause();
+				this.obserable.trigger({
+					type:'playVoice',
+					data:'end'
+				});
+
 			},
 			initTicket(){
 
@@ -325,10 +365,19 @@
 				context.fill();
 
 				!this.canvasBg && (this.canvasBg = canvas.toDataURL());
+			},
+			initTimer (){
+				this.stopTimer();
+				this.countryTimer = setInterval(() => {
+					if(this.currentCountryObj.name){
+						this.currentCountryObj.index++;
+						this.currentCountryObj.index %= this.currentCountryObj.cityImgs.length;
+					}
+				}, 4000);
+			},
+			stopTimer (){
+				clearInterval(this.countryTimer);
 			}
-
-			
-			
 			
 		},
 		mounted(){
@@ -344,10 +393,10 @@
 
 				this.showPlane1 = true;
 
-				this.obserable.trigger({
+				/* this.obserable.trigger({
 					type:"playVoice",
 					data:'plane'
-				})
+				}) */
 
 				var bgratio = 750/1468;
 				if((innerWidth/innerHeight)<=9/16){
@@ -358,13 +407,7 @@
 					this.videoWidth = window.innerWidth+'px';
 					this.videoHeight = parseInt(innerWidth/bgratio)+'px';
 				}
-				clearInterval(this.countryTimer);
-				this.countryTimer = setInterval(() => {
-					if(this.currentCountryObj.name){
-						this.currentCountryObj.index++;
-						this.currentCountryObj.index %= this.currentCountryObj.cityImgs.length;
-					}
-				}, 4000);
+				this.initTimer();
 
 				this.obserable.on('clearCountry',()=>{
 					this.viewCountrys.length = 0;

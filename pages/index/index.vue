@@ -29,8 +29,8 @@
 			</transition>
 
 			<transition name='remark'>
-				<div class="zmiti-main-remark" v-if='!showMain' v-tap='[entryChoose]'>
-					<img :src="imgs.remark" alt="">
+				<div class="zmiti-main-remark" v-if='!showMain' >
+					<img :src="imgs.remark" v-tap='[entryChoose]' alt="">
 				</div>
 			</transition>
 
@@ -73,11 +73,42 @@
 					data:'plane'
 				});
 
-				setTimeout(() => {
-					this.entryChoose();
-				}, 6000);
+
+
+				this.timer  = setTimeout(() => {
+					var audio = this.obserable.trigger({
+						type:'playVoice',
+						data:'start'
+					});
+					this.audio = audio;
+					audio.addEventListener('ended',()=>{
+						this.entryChoose();
+					})
+				}, 2000);
+			},
+			updatePv(){
+				var s = this;
+ 				axios.post(window.config.host + '/xhs-security-activity/activity/num/updateNum', {
+						"secretKey": window.config.secretKey, // 请求秘钥
+						"nm": "beltRoad2019" // 活动某组图片点赞标识 或者活动某组图片浏览量标识 标识由更新接口定义
+					}).then(function (data) {
+						var dt = data.data;
+						if (typeof dt === 'string') {
+							dt = JSON.parse(dt);
+						}
+						console.log(dt);
+
+					});
+
+				return;
+               
+ 
 			},
 			entryChoose(){
+				clearTimeout(this.timer );
+				if(this.audio ){
+					this.audio.pause();
+				}
 				this.show = false;
 				this.obserable.trigger({
 					type:"showChoosePage"
@@ -87,10 +118,7 @@
 		},
 		mounted(){
 			var {obserable} = this;
-
-			setTimeout(() => {
-				// 
-			}, 100);
+			this.updatePv();
 		}
 	}
 </script>	 

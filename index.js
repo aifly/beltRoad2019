@@ -142,6 +142,8 @@ new Vue({
 			
 			s.show = true;
 			s.loaded = true;
+
+			s.loading(cacheArr);
 			
 		})
 		

@@ -21,7 +21,7 @@ $color: #ca141f;
         &>.lt-full{
              &.country-enter-active,
              &.country-leave-active {
-                 @include transition(2s 0.1s);
+                 @include transition(opacity 2s 0.1s);
              }
 
              &.country-leave-to,

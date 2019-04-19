@@ -53,8 +53,8 @@
 }
 
 .zmiti-choose-main-ui > .zmiti-country-detail > .lt-full.country-enter-active, .zmiti-choose-main-ui > .zmiti-country-detail > .lt-full.country-leave-active {
-  -webkit-transition: 2s 0.1s;
-  transition: 2s 0.1s;
+  -webkit-transition: opacity 2s 0.1s;
+  transition: opacity 2s 0.1s;
 }
 
 .zmiti-choose-main-ui > .zmiti-country-detail > .lt-full.country-leave-to, .zmiti-choose-main-ui > .zmiti-country-detail > .lt-full.country-enter {
