@@ -316,10 +316,13 @@
   -webkit-box-align: center;
   -webkit-box-pack: center;
   -webkit-box-orient: horizontal;
+  -webkit-user-select: none;
 }
 
 .zmiti-choose-main-ui .zmiti-video .zmiti-video-btns img {
+  -webkit-user-select: none;
   pointer-events: none;
+  -webkit-touch-callout: none;
 }
 
 .zmiti-choose-main-ui .zmiti-video .zmiti-video-btns div {

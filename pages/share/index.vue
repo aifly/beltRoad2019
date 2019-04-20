@@ -119,8 +119,6 @@
 			updatePv(){
 				var s = this;
 
-               
-
  				axios.post('https://xlive.xinhuaapp.com/xhs-security-activity/activity/num/updateNum', {
                         "secretKey": window.config.secretKey, // 请求秘钥
                         "nm": "ypb-qmj" // 

@@ -290,8 +290,11 @@ $color: #ca141f;
             left: 10%;
             bottom: 100px;;
             @include displayBox(horizontal);
+            -webkit-user-select: none;
             img{
+                -webkit-user-select: none;
                 pointer-events: none;
+                -webkit-touch-callout: none;
             }
             div{
                 -webkit-box-flex:1;

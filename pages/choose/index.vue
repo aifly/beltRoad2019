@@ -162,6 +162,7 @@
 				showTip:true,
 				currentCountry:-1,
 				transY:0,
+				isAndroid:navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1,
 				videoWidth:window.innerWidth+'px',
 				showPlane1:false,
 				countrys:window.config.countryList.slice(0),
@@ -258,6 +259,8 @@
 				this.showVideo = true;
 				this.$refs['video'] && this.$refs['video'].play();
 				this.isPlaying = true;
+
+				return false;
 				
 			},
 			pauseVideo(){
