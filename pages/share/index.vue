@@ -193,16 +193,13 @@
 					this.$refs['audio'].play();
 				}, 1);
 
-
-				
-
-				window.wxHandlercallback('','我与AI主播同游了'+data.length+'个国家',document.title);
+				window.wxHandlercallback('','我和新小萌一起打卡了'+data.length+'个国家',document.title);
 				setTimeout(() => {
 					this.html2img();
 				}, 1000);
 			})
 
-			/* this.obserable.trigger({
+		/* 	this.obserable.trigger({
 				type:"showSharePage",
 				data:window.config.countryList
 			}) */

@@ -65,7 +65,7 @@
 	loadingBg: "./assets/images/loading-bg.jpg",
 	countryTop: './assets/images/country-top.png',
 	sharePoint: './assets/images/share-point.png',
-	shareTitle: './assets/images/share-title.png',
+	shareTitle: './assets/images/share-title1.png',
 
 
 
