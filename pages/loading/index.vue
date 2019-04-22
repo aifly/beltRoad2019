@@ -33,7 +33,7 @@
 				viewH:window.innerHeight,
 				show:true,
 				loaded:false,
-				title:"一带一路上的诗和远方",
+				title:"”一带一路“上的诗和远方",
 				showLoading:true,
 				
 			}

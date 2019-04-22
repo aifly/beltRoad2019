@@ -49,7 +49,7 @@
 	nextstation: "./assets/images/nextstation.png",
 	remark: "./assets/images/remark3.png",
 	xiaomeng: "./assets/images/xiaomeng.png",
-	title: "./assets/images/title1.png",
+	title: "./assets/images/title2.png",
 	earth: "./assets/images/earth.png",
 	ticket: "./assets/images/ticket.png",
 	tip: "./assets/images/tip.png",
