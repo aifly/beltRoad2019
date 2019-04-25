@@ -29,8 +29,11 @@
 			</transition>
 
 			<transition name='remark'>
-				<div class="zmiti-main-remark" v-if='!showMain' >
-					<img :src="imgs.remark" v-tap='[entryChoose]' alt="">
+				<div class="zmiti-main-remark" v-if='!showMain'  v-tap='[entryChoose]'>
+					<img :src="imgs.remark"  alt="">
+					<div>
+						<img :src="imgs.skip" v-press  alt="">
+					</div>
 				</div>
 			</transition>
 
@@ -72,19 +75,9 @@
 					type:'playVoice',
 					data:'plane'
 				});
-
-
-
 				this.timer  = setTimeout(() => {
-					var audio = this.obserable.trigger({
-						type:'playVoice',
-						data:'start'
-					});
-					this.audio = audio;
-					audio.addEventListener('ended',()=>{
-						this.entryChoose();
-					})
-				}, 2000);
+					this.entryChoose();
+				}, 6000);
 			},
 			updatePv(){
 				var s = this;
@@ -97,7 +90,6 @@
 							dt = JSON.parse(dt);
 						}
 						console.log(dt);
-
 					});
 
 				return;
@@ -119,6 +111,8 @@
 		mounted(){
 			var {obserable} = this;
 			this.updatePv();
+
+			
 		}
 	}
 </script>	 

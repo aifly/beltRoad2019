@@ -337,8 +337,8 @@
   left: 50%;
   z-index: 200;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%) scale(1);
-  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .zmiti-choose-main-ui .zmiti-project {

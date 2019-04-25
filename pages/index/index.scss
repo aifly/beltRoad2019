@@ -124,13 +124,27 @@
 
         @include displayBox(horizontal);
 
-        img {
+        &>img {
             display: block;
             width: auto;
             height: auto;
             max-height: 88%;
             max-width: 88%;
         }
+        &>div{
+            @include pos(a);
+            bottom: 40px;
+            left: 50%;
+            width:400px;
+            margin-left: -200px;
+            img{
+                width: 400px;
+                max-width: 100%;
+                
+            }
+        }
+
+
     }
 
     .zmiti-index-title {

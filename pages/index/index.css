@@ -151,12 +151,25 @@
   transform: translateX(300px);
 }
 
-.zmiti-index .zmiti-main-remark img {
+.zmiti-index .zmiti-main-remark > img {
   display: block;
   width: auto;
   height: auto;
   max-height: 88%;
   max-width: 88%;
+}
+
+.zmiti-index .zmiti-main-remark > div {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+}
+
+.zmiti-index .zmiti-main-remark > div img {
+  width: 400px;
+  max-width: 100%;
 }
 
 .zmiti-index .zmiti-index-title {

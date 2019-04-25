@@ -1,21 +1,42 @@
 <template>
 	<transition name='loading'>
 		<section v-if='show'  class="lt-full zmiti-share-main-ui" :class='{"active":createImg}'>
-			<div  class='lt-full' ref='page1' :style="{WebkitFilter:'blur('+(createImg?'10px':0)+')',background:'url('+imgs.shareBg+') no-repeat left bottom ',backgroundSize:'cover'}" >
-				<div class='zmiti-share-title'>
-					<img :src="imgs.shareTitle" alt="">
-					<span>{{countryList.length}}</span>
+			<div  class='lt-full' ref='page1' >
+				<div class="lt-full" :style="{WebkitFilter:'blur('+(createImg?'20px':0)+')',background:'url('+countryList.clipImg+') no-repeat left bottom ',backgroundSize:'cover'}" >
+
 				</div>
-				<div class="zmiti-index-logo">
-					<img :src="imgs.logo" alt="">
+				<div class="zmiti-share-title">
+					<img :src="imgs.shareTitle" alt="">
+				</div>
+				<div class='zmiti-card-name'>
+					{{countryList.name}}
+				</div>
+
+
+				<div class='zmiti-card-C'>
+					<div class='zmiti-logo1'>
+						<img :src="imgs.logo1" alt="">
+						<div class='zmiti-share-poster'>
+							<span v-for='(span,i) in [1,0,0,0,0,0]' :key="i">
+								{{span}}
+							</span>
+						</div>
+					</div>
+
+					<div class='zmiti-share-text'>
+						 即刻分享沿途美丽风景，邀请好友一同打卡！
+					</div>
+
+					<div class='zmiti-date'>
+						{{date}}
+					</div>
+
+					<div class='zmiti-qrcode'>
+						<img :src="imgs.qrcode" alt="">
+					</div>
+
 				</div>
 				
-				<div class='zmiti-share-point'>
-					<img :src="imgs.sharePoint" alt="">
-				</div>
-				<div  class='zmiti-point-C' v-for="(point,i) in countryPosition" :key="i"  :style="{left:point.x+'px',bottom:point.y+'px'}">
-					<div >{{countryList[i]?countryList[i].name:''}}</div>
-				</div>
 			</div>
 
 			<transition name='create'>
@@ -59,6 +80,7 @@
 				end:window.config.end,
 				isAndroid:navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1,
 				showQrcode:false,
+				date:"",
 				countryPosition:window.config.countryPosition,
 				showSharePage:false,
 				matchMoved:false,
@@ -187,9 +209,9 @@
 		},
 		mounted(){
 			this.obserable.on('showSharePage',(data)=>{
+				this.countryList = data.pop();
 				this.show = true;
 				setTimeout(() => {
-					this.countryList = data;
 					this.$refs['audio'].play();
 				}, 1);
 
@@ -203,6 +225,15 @@
 				type:"showSharePage",
 				data:window.config.countryList
 			}) */
+
+			var D = new Date();
+			var year = D.getFullYear();
+			var month = D.getMonth()+1;
+			var day = D.getDate();
+
+			month = month<10 ? '0' + month : month;
+
+			this.date = [year,month,day].join('-');
 			
 		}
 	}

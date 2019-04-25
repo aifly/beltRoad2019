@@ -34,7 +34,7 @@
 					</div>
 					
 				</div>
-				<div class='zmiti-go-next' v-show="showCountryDetail">
+				<div class='zmiti-go-next' v-if='false' v-show="showCountryDetail">
 					<div v-press v-tap='[goCountry]'>
 						<img  :src="imgs.see" alt="">
 					</div>
@@ -42,7 +42,7 @@
 						<img :src="imgs.no" alt="">
 					</div>
 				</div>
-				<div class="zmiti-go" v-press v-if='!showCountryDetail && currentCountry>-1' v-tap='[goCountry]'>
+				<div class="zmiti-go"  v-press v-if='!showCountryDetail && false && currentCountry>-1' v-tap='[goCountry]'>
 						<img :src="imgs.go" alt="">
 					</div>
 				<div class='zmiti-choose-bottom'>
@@ -137,7 +137,7 @@
 			<img :src="imgs.tip" alt="">
 		</div>
 
-		<audio v-if='currentCountryObj.audio' :src='currentCountryObj.audio' ref='audio'></audio>
+		<audio :src='currentCountryObj.audio' ref='audio'></audio>
 	</div>
 </template>
 
@@ -153,6 +153,7 @@
 		data(){
 			return{
 				imgs:window.imgs,
+				ticketActive:false,
 				daoyu:window.config.daoyu,
 				daoyuAudio:window.config.daoyuAudio,
 				show:false,
@@ -221,6 +222,7 @@
 						this.audioPlaying = true;
 					})
 					this.daoyuAudio.addEventListener('ended',()=>{
+						
 						this.audioPlaying = false;
 					})
 					this.daoyuAudio.addEventListener('pause',()=>{
@@ -234,11 +236,14 @@
 		methods:{
 
 		    exit(fn){
-					setTimeout(() => {
-						this.showVideo = false;
-						this.pauseVideo();
-						fn && fn();
-					}, 100);
+				this.$refs['audio'].play();
+
+
+				setTimeout(() => {
+					this.showVideo = false;
+					this.pauseVideo();
+					fn && fn();
+				}, 100);
 			},
 			nextStation(){
 				this.exit(()=>{
@@ -259,6 +264,7 @@
 				this.showVideo = true;
 				this.$refs['video'] && this.$refs['video'].play();
 				this.isPlaying = true;
+				this.$refs['audio'].pause();
 
 				return false;
 				
@@ -272,6 +278,10 @@
 			chooseCountry(index){
 				this.currentCountry = index;
 				this.transY = this.viewH - 780;
+
+				setTimeout(() => {
+					this.goCountry();
+				}, 505);
 				
 			},
 			goCountry(){
@@ -295,23 +305,29 @@
 						}
 					})
 					!isSame && this.viewCountrys.push(JSON.parse(JSON.stringify(this.currentCountryObj)));
+
+					setTimeout(() => {
+						this.wordsAnimation = true;
+						this.$refs['audio'].currentTime =  0;
+						this.$refs['audio'].play();
+						this.$refs['audio'].addEventListener('play',()=>{
+							this.audioPlaying = true;
+						})
+						this.$refs['audio'].addEventListener('ended',()=>{
+							this.audioPlaying = false;
+							setTimeout(() => {
+								this.goNextCountry();
+							}, 1001);
+						})
+						
+						this.$refs['audio'].addEventListener('pause',()=>{
+							this.audioPlaying = false;
+						})
+						this.initTimer();
+					}, 200);
 				}, 10);
 				this.stopTimer();
-				setTimeout(() => {
-					this.wordsAnimation = true;
-					this.$refs['audio'].currentTime =  0;
-					this.$refs['audio'].play();
-					this.$refs['audio'].addEventListener('play',()=>{
-						this.audioPlaying = true;
-					})
-					this.$refs['audio'].addEventListener('ended',()=>{
-						this.audioPlaying = false;
-					})
-					this.$refs['audio'].addEventListener('pause',()=>{
-						this.audioPlaying = false;
-					})
-					this.initTimer();
-				}, 100);
+				
 			},
 
 			goNextCountry(){
