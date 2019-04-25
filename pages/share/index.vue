@@ -56,7 +56,9 @@
 			<div class='zmiti-mask' v-if='showMask' @touchstart='showMask = false'>
 				<img :src="imgs.arrow" alt="">
 			</div>
-			<audio :src='end' ref='audio'></audio>
+			<audio :src='end' ref='audio1'></audio>
+			<audio :src='photo' ref='photo'></audio>
+			
 		</section>
 	</transition>
 </template>
@@ -74,6 +76,7 @@
 			return{
 				imgs:window.imgs,
 				className:"",
+				photo:window.config.photo,
 				showAudio:false,
 				showMask:false,
 				countryList:[],
@@ -112,7 +115,10 @@
 				this.obserable.trigger({
 					type:'clearCountry'
 				})
-				this.$refs['audio'].pause();
+				this.$refs['audio1'].pause();
+				this.obserable.trigger({
+					type:'initAudio'
+				})
 			},
 
 
@@ -181,10 +187,21 @@
 				this.showCandle1 = true;
 				this.showAudio = false;
 
+				/* var allAudios = document.querySelectorAll('audio');
+				[...allAudios].forEach((audio)=>{
+					audio.muted = true;
+				}) */
+
+				
+				
+
 				obserable.trigger({
-					type:'playVoice',
-					data:'photo'
+					type:"removeAudio",
+					
 				});
+
+				this.$refs['photo'].play();
+
 				setTimeout(()=>{
 					//this.showLoading = true;
 					
@@ -197,11 +214,12 @@
 							//s.createImg = src;
 							s.createImg = src;
 							
+							
 					      },
 					      width: dom.clientWidth,
 					      height:dom.clientHeight
 					})
-				},100)
+				},1000)
 
  
 			},
@@ -212,7 +230,8 @@
 				this.countryList = data.pop();
 				this.show = true;
 				setTimeout(() => {
-					this.$refs['audio'].play();
+					this.$refs['audio1'].play();
+
 				}, 1);
 
 				window.wxHandlercallback('','我和新小萌一起打卡了'+data.length+'个国家',document.title);

@@ -75,6 +75,7 @@
 					type:'playVoice',
 					data:'plane'
 				});
+				
 				this.timer  = setTimeout(() => {
 					this.entryChoose();
 				}, 6000);
@@ -102,6 +103,7 @@
 					this.audio.pause();
 				}
 				this.show = false;
+				
 				this.obserable.trigger({
 					type:"showChoosePage"
 				})

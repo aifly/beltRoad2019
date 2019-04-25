@@ -206,7 +206,7 @@ window.config = {
 	host: "https://xlive.xinhuaapp.com", //正式域名：https://testxlive.xinhuaapp.com
 	secretKey: "e9469538b0623783f38c585821459454",
 	daoyu: '尊敬的旅客您好！欢迎您搭乘本次“一带一路”号专机，我是新华社AI合成女主播新小萌，我将全程陪同您完成本次旅行，一起度过一段难忘的美好时光！话不多说，let’s go!',
-	daoyuAudio:'./assets/music/daoyu-1.mp3',
+	daoyuAudio:'./assets/music/1212.mp3',
 	clipImg:imgs.guba,
 	countryPosition: [
 		{
@@ -426,11 +426,11 @@ window.config = {
 			daoyu: "想坐热气球？来土耳其就对了！土耳其是古丝路的重要驿站，如今加入到“一带一路”建设中。全长533公里的安伊高铁有158公里是中国企业参与修建的。来，让我们一起搭乘安伊高铁，体验出行新速度。",
 			audio:'./assets/music/tuerqi-1.mp3',
 			clipImg: imgs.tuerqi_1,
-			project:{
+			/* project:{
 				name:'中土合作项目',
 				poster: imgs.poster2,
 				video:'./assets/video/ball1.mp4'
-			}
+			} */
 		}, {
 			name: '斯里兰卡',
 			img: imgs.sililank,
@@ -533,7 +533,7 @@ var musics = {
 	 	name: 'plane',
 	 },
 	 daoyu: {
-	 	src: './assets/music/daoyu.mp3',
+	 	src: './assets/music/1212.mp3',
 	 	autoplay: 'autoplay',
 	 	name: 'daoyu',
 	 }

@@ -359,6 +359,7 @@
 					data:this.viewCountrys
 				});
 				this.$refs['audio'] && this.$refs['audio'].pause();
+				
 				this.obserable.trigger({
 					type:'playVoice',
 					data:'end'

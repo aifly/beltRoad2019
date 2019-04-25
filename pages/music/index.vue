@@ -1,8 +1,6 @@
 <template>
 	<div  class="lt-full zmiti-music-main-ui" :style='{height:"10vh"}'>
 		<audio ref='music' :key="i" v-for='(audio,i) in audios' :src='audio.src' :autoplay="audio.autoplay" :loop="audio.loop"></audio>
-		<audio ref='audio' :src='src' ></audio>
-		<audio ref='photo' :src='photo' ></audio>
 
 		<div  @click='toggleMusic' class='zmiti-play' :class='{"active":rotate}' :style="playStyle">
 			<img  :src='imgs.play'/>
@@ -28,7 +26,6 @@
 				rotate:false,
 				src:window.config.audio1,
 				playStyle:{},
-				photo:window.config.photo
 			}
 		},
 		components:{
@@ -52,8 +49,7 @@
 						}
 					}
 				})
-				this.$refs['audio'].muted = true;//静音
-				this.$refs['audio'].play();
+			
 				
 			}
 		},
@@ -105,38 +101,41 @@
 			obserable.on('playVoice',(key)=>{
 
 				var audioObj  = null;
-
-				console.log(key);
-
+				this.audios.forEach((audio,i)=>{
+					if(i>0 ){
+						this.$refs['music'][i].pause();
+						this.$refs['music'][i].muted = true;//设置静音
+						this.$refs['music'][i].currentTime = 0;
+					}
+				})
+				console.log(key,' --- ')
 				this.audios.forEach((audio,i)=>{
 					if(i>0 ){
 						if(audio.name === key){
 							audioObj = this.$refs['music'][i];
+							
 							//audioObj.currentTime = 0;
 							audioObj.muted = false;//取消静音
-							
 							audioObj.play();
 						}else{
-							this.$refs['music'][i].pause();
-							this.$refs['music'][i].muted = true;//设置静音
-							this.$refs['music'][i].currentTime = 0;
 						}
-
 					}
 				})
 				return audioObj;
 			})
 			
 			obserable.on('removeAudio',(key)=>{
-				var audioObj = null;
-				this.audios.forEach((audio,i)=>{
-					if(i>0 ){
-						if(audio.name === key){
-							audio.removed = true;
-							
-						}
-					}
-				})
+				this.audios.length = 1;
+				this.audios = this.audios.concat([]);
+				console.log(this.audios,'removeAudio....')
+			});
+
+			obserable.on('initAudio',(key)=>{
+				var audios = [];
+				for (var music in window.musics){
+					audios.push(musics[music])
+				}
+				this.audios = audios;
 			});
 
 			obserable.on('pauseVoice',(key)=>{
